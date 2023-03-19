@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #button, #re{
+            display: inline-block;
+            margin: 20px 19.7%;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body style="background-color: #777; color: white;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+    <div id="main">
+        <p style="border-bottom: 2px #555 solid; padding: 30px 5px;"><b id="title" style="font-size: 3.4rem;text-align: center;  "> Finding the circumference of a circle </b></p>
+        <div id="r" style="tetx-align: center; padding: 2% 35%; ">
+            <label id="labelR" for="R" style="font-weight:600; font-size: 2rem; color: #444" >Radius </label>
+            <input type="number" id="R" placeholder="in cm" required style="border-radius: 4px; border: none; padding: 5px 20px; width: 33%; color: #777; font-size: 1.1rem; font-weight: 700; background-color: #444;  ">
+        </div>
+        
+        <button id="button">Submit</button>
+        <button type="button" id="re" onclick="location.reload()">reload</button>
+    </div>
+    <script src="script2.js"></script>
+</body>
+</html>

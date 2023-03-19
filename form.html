@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #222;
+            color: white;
+            text-align: center;
+            font-family: monospace;
+        }
+        *{
+            font-family: monospace;
+        }
+        form{
+            text-align: center;
+        }
+        #nameLabel,#ageLabel{
+            color: white;
+            background: none;
+            border: none;
+        }
+        
+        #permi{
+            width: 90%;
+            border: 1px black solid;
+            height: 25vh;
+            text-align:justify;
+            font-size: 2.9rem;
+            padding: 10px;
+            color: rgb(0, 158, 137);
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <form id="form">
+        <h1 id="h1"> </h1><br>
+        <button id="nameLabel">Name: </button>
+        <input type="text" id="name"><br><br>
+        <button id="ageLabel">Age: </button>
+        <input type="number" id="age">
+        <div id="permi">
+
+        </div>
+    </form>
+</body>
+<script>
+
+    document.getElementById("name").onchange=function(){
+        let name = document.getElementById("name").value;
+        document.getElementById("nameLabel").innerHTML="Hello, " + name + " 👋";
+        document.getElementById("name").style.display="none";
+        document.getElementById("nameLabel").style.fontSize="3rem";
+    }
+    document.getElementById("nameLabel").onclick=function(){
+        document.getElementById("name").style.display="block";
+    }
+
+    document.getElementById("age").onchange=function(){
+        let age = document.getElementById("age").value;
+        age=Number(age);
+        if(age==1){
+
+            document.getElementById("ageLabel").innerHTML="You are " + age + " year old";
+        }
+        else if(age<=0){
+            document.getElementById("ageLabel").innerHTML="This is inappropriate!";
+        }
+        else{
+            document.getElementById("ageLabel").innerHTML="You are " + age + " years old";
+        }
+        document.getElementById("age").style.display="none";
+        document.getElementById("ageLabel").style.fontSize="2rem";
+        if(age>=18){
+            document.getElementById("permi").innerHTML="You are eligible for the test";
+        }
+        else{
+            document.getElementById("permi").innerHTML="You are not eligible for the test";
+            document.getElementById("permi").style.color="tomato";
+        }
+    }
+    document.getElementById("ageLabel").onclick=function(){
+        document.getElementById("age").style.display="block";
+    }
+
+
+</script>
+</html>

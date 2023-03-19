@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dice rolling</title>
+    <style>
+        body{
+            background-color: #444;
+            text-align: center;
+        }
+        button{
+            background-color: #444;
+            border-radius: 10px;
+            cursor:grab;
+            font-size: 5rem;
+        }
+        label{
+            font-size: 10rem;
+            display:block;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <label id="label1">Roll the dice...</label><br>
+    <label id="label2"></label><br>
+    <button id="roll">🎲</button>
+</body>
+<script>
+    let x,y,z;
+    document.getElementById("roll").onclick = function(){
+        x = Math.random();
+        x = Math.floor(x * 6) + 1;
+        document.getElementById("label1").innerHTML = x;
+    
+        y = Math.random();
+        y = Math.floor(y * 6) + 1;
+        document.getElementById("label2").innerHTML = y;
+   
+    
+    }
+</script>
+</html>

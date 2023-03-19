@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>incdec</title>
+    <style>
+        body{
+            background-color: #888;
+            text-align: center;
+            
+        }
+        
+        label{
+            transition: all 0.5s ease;
+            display: block;
+            margin-top: 4.8%;
+            font-size: 15rem;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        label:hover{
+            color: #272727;
+        }
+        button{
+            width: 33.33%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px black solid;
+            max-width: 100px ;
+       
+        }
+        #res{
+            border-radius: 25px;
+            background-color: #272727;
+            color: white;
+            transition: all 0.3s ease ;
+        }
+        #res:hover{
+            background-color: #fff;
+            color: black;
+            border: 1.6px black solid;
+        }
+        #inc, #dec, #font{
+            margin: 6%;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+        #inc:hover, #dec:hover, #font:hover{
+            background-color: #272727;
+            color: white;
+            border: 1.6px white solid;
+        }
+    </style>
+</head>
+<body>
+    <label id="lab">0</label><br>
+    
+    <button id="inc">Increase</button>
+    <button id="res">Reset</button>
+    <button id="dec">Decrease</button>
+
+    <br>
+    <button id="font">Font</button>
+    <script>
+        let x=0;
+
+        document.getElementById("inc").onclick = function(){
+            x+=1;
+            document.getElementById("lab").innerHTML=x;
+        }
+        document.getElementById("res").onclick = function(){
+            x=0;
+            document.getElementById("lab").innerHTML=x;
+            document.getElementById("lab").style.fontFamily="Impact";
+            document.getElementById("font").style.fontFamily="sans-serif";
+        }
+        document.getElementById("dec").onclick = function(){
+            x-=1;
+            document.getElementById("lab").innerHTML=x;
+        }
+
+        document.getElementById("font").onclick = function(){
+            document.getElementById("lab").style.fontFamily="cursive";
+            document.getElementById("font").style.fontFamily="cursive";
+        }
+    </script>
+</body>
+</html>
