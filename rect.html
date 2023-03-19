@@ -1,74 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rect</title>
-    <style>
-        body{
-            background-color: #222;
-            text-align: center;
-        }
-        #cont{
-            width: 80%;
-            height: 60vh;
-            border: 1px black solid;
-            font-size: 2rem;
-            background-color: #666;
-            color: white;
-            text-align: center;
-            display: block;
-            position: relative;
-            left: 63px;
-            overflow: scroll;
-            scroll-behavior: smooth;
-            scrollbar-color: #222;
-            scrollbar-width: 0px;
-        }
-    </style>
-</head>
-<body>
-    <input class="input" id="char" type="text" placeholder="Character">
-    <input class="input" id="row" type="number" placeholder="Number of Rows">
-    <input class="input" id="col" type="number" placeholder="Number of Columns">
-    <br>
-    <button id="done">Done</button>
-    <div id="cont"></div>
-    <button id="clear" onclick="location.reload()">reset</button>
-</body>
-<script>
-    document.getElementById("row").onchange = function(){
-        document.getElementById("cont").innerHTML = " ";
-    }
-    document.getElementById("col").onchange = function(){
-        document.getElementById("cont").innerHTML = " ";
-    }
-    document.getElementById("char").onchange = function(){
-        document.getElementById("cont").innerHTML = " ";
-    }
-    
-    document.getElementById("done").onclick = function(){
-        let row, col, char;
-        char = document.getElementById("char").value;
-        row = document.getElementById("row").value;
-        col = document.getElementById("col").value;
-        
-        if(row > 19){
-            document.getElementById("cont").style.fontSize = "13px";
-        }else if(row > 9){
-            document.getElementById("cont").style.fontSize = "1rem";
-        }else{
-            document.getElementById("cont").style.fontSize = "50px";
-        }
+<html>
 
-        for(let i = 1; i <= row; i+=1){
-            for(let j = 1; j <= col; j+=1){
-                document.getElementById("cont").innerHTML += char;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+  *{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  body{
+    text-align: center;
+    background-color:#444;
+  }
+  h1{
+    color: white;
+  }
+  input{
+    padding:3px;
+    margin:3px;
+    background-color:white;
+    color:black;
+    border-radius: 5px;
+    border:2px black solid;
+  }
+  button{
+    padding:3px;
+    margin:3px;
+    border-radius:10px;
+    width: 40%;
+    height: 10vh;
+    margin-top:15px;
+    border:4px black solid;
+    transition: all 0.3s ease;
+    font-size: 2rem;
+    
+  }
+  button:active {
+    background-color: #555;
+    border:4px grey solid;
+    color:grey;
+  }
+  button:hover{
+    background-color: #111;
+    border: 1px white solid;
+    color: white;
+  }
+    #cont{
+      padding:10px;
+      margin:5%;
+      border:1px white solid;
+      transition: all 0.7s ease;
+      color:white;
+      width: 90%;
+      height: 50vh;
+      overflow: scroll;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Playing with for loops...</h1>
+  <input id="row" type="number" placeholder="rows">
+  <input id="col" type="number" placeholder="columns">
+  <input id="char" type="text" placeholder="character">
+  
+  <br>
+  <button id="done">Done</button>
+  <div id="cont">result will be displayed here</div>
+</body>
+  <script>
+    
+    document.getElementById("done").onclick=function(){
+    let char,row,col,i,j;
+    char = document.getElementById("char").value;
+    row = document.getElementById("row").value;
+    col = document.getElementById("col").value;
+            
+    if(row>9 || col>30){
+        document.getElementById("cont").style.fontSize="3rem";
+        document.getElementById("cont").innerHTML="The rectangle will look ugly after this limit <br> max-rows: 9<br>max-columns:30";
+    }else{
+        document.getElementById("cont").style.fontSize="1rem";
+        for(i=0;i<row;i+=1){
+              
+            for(j=0;j<col;j+=1){       
+                document.getElementById("cont").innerHTML+=char+"  ";
             }
-            document.getElementById("cont").innerHTML += "<br>";
+            document.getElementById("cont").innerHTML+="<br>";
+            }
         }
+            
+        document.getElementById("char").onchange=function(){
+            document.getElementById("cont"). innerHTML="";
+            }
+        document.getElementById("row").onchange = function() {
+            document.getElementById("cont").innerHTML = "";
+            }
+        document.getElementById("col").onchange = function() {
+            document.getElementById("cont").innerHTML = "";
+            }
     }
     
-</script>
+    
+    
+  </script>
 </html>
