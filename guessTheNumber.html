@@ -20,6 +20,7 @@
         border-radius: 6px;
         border: 1px black solid;
         transition: all 0.4s ease;
+        text-align: center;
     }
     input:focus{
         border: 4px white dotted;
@@ -36,6 +37,7 @@
         border: 3px white dotted;
         background-color: #666;
     }
+   
   </style>
 </head>
 
@@ -44,20 +46,32 @@
   <input type="number" id="ip" placeholder="Enter the number here">
   
   <div id="div">The result will be displayed here</div>
-  <button id="gu">Give up</button>
-  <br>
   <button id="reset" onclick="location.reload()">Reset</button>
+  <br>
+  <button id="gu">Give up</button>
 </body>
   <script>
     const corr=Math.floor(Math.random()*10+1);
     let tries=0;
+    document.getElementById("gu").style.color="#888";
+    document.getElementById("gu").style.backgroundColor="#888";
+    document.getElementById("gu").style.borderColor="#888";
+
     document.getElementById("ip").onchange=function(){
         document.getElementById("div").innerHTML=" ";
-      let ip = document.getElementById("ip").value;
+        let ip = document.getElementById("ip").value;
       
       tries+=1;
+      if(tries<4){
+        document.getElementById("gu").style.color="#888";
+        document.getElementById("gu").style.backgroundColor="#888";
+        document.getElementById("gu").style.borderColor="#888";
+    }else{
+        document.getElementById("gu").style.color="white";
+        document.getElementById("gu").style.backgroundColor="#333";
+        document.getElementById("gu").style.borderColor="white";
+    }
       if(ip==corr){
-        
         document.getElementById("div").innerHTML+=`You guessed it right!!<br>it took you ${tries} tries `;
         document.getElementById("ip").style.display="none";
         document.getElementById("div").style.color="white";
@@ -72,6 +86,7 @@
       }
       
     }
+    
     document.getElementById("gu").onclick=function(){
         document.getElementById("div").innerHTML=`${corr} is the correct number <br>`;
     }
