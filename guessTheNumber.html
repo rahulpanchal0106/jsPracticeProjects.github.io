@@ -6,16 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
   <style type="text/css" media="all">
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dancing+Script&family=Exo&family=Fira+Sans:wght@300&family=Lato&family=Lobster&family=Playfair+Display&family=Quicksand&display=swap');
+    *{
+        font-family: Quicksand;
+    }
   body{
     text-align: center;
     background-color: #888;
   }
     div{
-    margin: 10px;
-    padding: 10px;
+    margin: 20px;
+    padding: 20px;
+    font-size:4rem
     }
     input{
-        margin: 10px;
+        margin: 20px;
         padding: 9px;
         border-radius: 6px;
         border: 1px black solid;
@@ -26,7 +31,7 @@
         border: 4px white dotted;
     }
     button{
-        margin: 10px;
+        margin: 20px;
         padding: 5px;
         border-radius: 5px;
         width: 40%;
@@ -42,7 +47,7 @@
 </head>
 
 <body id="body">
-  <h1>Guess the number</h1><h3>between 1 to 10</h3>
+  <h1>Guess the number</h1><h3>between 1 to 20</h3>
   <input type="number" id="ip" placeholder="Enter the number here">
   
   <div id="div">The result will be displayed here</div>
@@ -51,7 +56,7 @@
   <button id="gu">Give up</button>
 </body>
   <script>
-    const corr=Math.floor(Math.random()*10+1);
+    const corr=Math.floor(Math.random()*20+1);
     let tries=0;
     document.getElementById("gu").style.color="#888";
     document.getElementById("gu").style.backgroundColor="#888";
@@ -75,8 +80,8 @@
         document.getElementById("div").innerHTML+=`You guessed it right!!<br>it took you ${tries} tries `;
         document.getElementById("ip").style.display="none";
         document.getElementById("div").style.color="white";
-      }else if(ip > 10) {
-        document.getElementById("div").innerHTML += "You cannot use the numbers greater than 10 <br>";
+      }else if(ip > 20) {
+        document.getElementById("div").innerHTML += "You cannot use the numbers greater than 20 <br>";
       }else if(ip < 1) {
         document.getElementById("div").innerHTML += "You cannot use the number less than 1 <br>";
       }else if(ip>corr){
