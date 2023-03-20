@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css" media="all">
+  body{
+    text-align: center;
+    background-color: #888;
+  }
+    div{
+    margin: 10px;
+    padding: 10px;
+    }
+    input{
+        margin: 10px;
+        padding: 9px;
+        border-radius: 6px;
+        border: 1px black solid;
+        transition: all 0.4s ease;
+    }
+    input:focus{
+        border: 4px white dotted;
+    }
+    button{
+        margin: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        width: 40%;
+        border: 1px rgb(3, 3, 3) solid;
+        transition:all 0.4s ease;
+    }
+    button:active{
+        border: 3px white dotted;
+        background-color: #666;
+    }
+  </style>
+</head>
+
+<body id="body">
+  <h1>Guess the number</h1><h3>between 1 to 10</h3>
+  <input type="number" id="ip" placeholder="Enter the number here">
+  
+  <div id="div">The result will be displayed here</div>
+  <button id="gu">Give up</button>
+  <br>
+  <button id="reset" onclick="location.reload()">Reset</button>
+</body>
+  <script>
+    const corr=Math.floor(Math.random()*10+1);
+    let tries=0;
+    document.getElementById("ip").onchange=function(){
+        document.getElementById("div").innerHTML=" ";
+      let ip = document.getElementById("ip").value;
+      
+      tries+=1;
+      if(ip==corr){
+        
+        document.getElementById("div").innerHTML+=`You guessed it right!!<br>it took you ${tries} tries `;
+        document.getElementById("ip").style.display="none";
+        document.getElementById("div").style.color="white";
+      }else if(ip > 10) {
+        document.getElementById("div").innerHTML += "You cannot use the numbers greater than 10 <br>";
+      }else if(ip < 1) {
+        document.getElementById("div").innerHTML += "You cannot use the number less than 1 <br>";
+      }else if(ip>corr){
+        document.getElementById("div").innerHTML += `${ip} is too large <br>`;
+      }else if(ip<corr){
+        document.getElementById("div").innerHTML +=`${ip} is too small <br>`;
+      }
+      
+    }
+    document.getElementById("gu").onclick=function(){
+        document.getElementById("div").innerHTML=`${corr} is the correct number <br>`;
+    }
+    
+  </script>
+</html>
