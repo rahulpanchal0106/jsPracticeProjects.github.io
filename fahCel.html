@@ -20,6 +20,13 @@
 
     }
 
+    #la{
+        color: black;
+        font-size: 1.4rem;
+        position: relative;
+        bottom: 10px;
+        left: -20px;
+    }
     body{
 
       background-color: #555;
@@ -53,7 +60,16 @@
       border-radius: 5px;
 
       font-size:1.1rem;
-
+        
+    }
+    input[type="radio"]{
+        margin: 15px 10px;
+        font-size: 2rem;
+    }
+    
+    #la1{
+        margin: 15px 0px;
+        font-size: 2rem;
     }
 
     #ans{
@@ -92,7 +108,7 @@
 
       width: 40%;
 
-      height
+      
 
     }
 
@@ -122,11 +138,13 @@
 
   <div id="select">
 
-    <input type="radio" id="fah" name="unit"><label for="fah">Fahrenheit</label>
+    <label for="select" id="la">Convert to</label>
+    <br>
+    <input type="radio" id="fah" name="unit"><label for="fah" id="la1">Fahrenheit</label>
 
     <br>
 
-    <input type="radio" id="cel" name="unit"><label for="cel">Celcius</label>
+    <input type="radio" id="cel" name="unit"><label for="cel" id="la1">Celcius</label>
 
   </div>
 
@@ -158,13 +176,13 @@
 
         let ans=toFah(temp);
 
-        document.getElementById("ans").innerHTML=ans+" F";
+        document.getElementById("ans").innerHTML=`${temp}C = ${ans}F`;
 
       }else if(document.getElementById("cel"). checked){
 
         let ans1=toCel(temp);
 
-        document.getElementById("ans").innerHTML=ans1+" °C";
+        document.getElementById("ans").innerHTML=`${temp}F = ${ans2}C`;
 
       }
 
