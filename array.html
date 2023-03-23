@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing Arrays</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dancing+Script&family=Exo&family=Fira+Sans:wght@300&family=Lato&family=Lobster&family=Playfair+Display&family=Quicksand&display=swap');
+        *{
+            font-family:Quicksand;
+        }
+        header{
+            height: 10%;
+            background-color: #9999994e;
+            margin: 0px;
+            padding: 3px;
+            position: sticky;
+            top: 0px;
+            box-shadow: 0px 3px 25px black;
+            backdrop-filter:blur(15px);
+            color:tomato;
+            border-bottom:1px tomato solid;
+            user-select: none;
+            letter-spacing: 5px;
+            font-size: 4rem;
+        }
+        body{
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding:0px;
+            margin: 0px;
+        }
+        input{
+            color: rgb(193, 193, 193);
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px white solid; 
+            width: 54%;
+            margin-top: 20%;
+        }
+        input:focus{
+            border-color: tomato;
+        }
+        button{
+            color: rgb(193, 193, 193);
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px white solid; 
+            margin-top: 10%;
+        }
+        button:active{
+            color: tomato;
+            background-color: #333;
+            border-color: tomato;
+        }
+
+    </style>
+</head>
+<body>
+    <header>Arrays</header>
+    <input type="number" id="input" placeholder="Hit enter after typing the number" required>
+    <div id="display"></div>
+    <br>
+    <button id="sort">Sort the array</button>
+    <div id="sorted"></div>
+</body>
+<script>
+    var numbers=[], number,index, x, num, i;
+    document.getElementById("input").onchange=function(){
+        let input = document.getElementById("input").value;
+        input=Number(input);
+        if(input==0){
+            alert("Please enter a number to add in the array except 0");
+
+        }else if(input==number){
+            alert("This number already exists in the array");
+        }else{
+            let n = numbers.push(input);
+        
+            x=numbers.length;
+            
+            index=Math.floor(Math.random()*x);
+            number = numbers[index];
+            number=Number(number);
+            console.log(`Index no.: ${index} -------> Number: ${number}  ------- size: ${x}`);
+            
+        }
+        console.log(numbers);
+        document.getElementById("display").innerHTML=numbers;
+        
+    }
+
+    document.getElementById("sort").onclick = function(){
+        let sortedNumbers=numbers.sort(function(a,b){
+            return a-b
+        });
+        document.getElementById("sorted").innerHTML=sortedNumbers;
+
+       
+    }
+
+
+</script>
+</html>
