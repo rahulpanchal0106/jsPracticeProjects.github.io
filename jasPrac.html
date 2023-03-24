@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
+  
   <title>Javascript practice projects</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dancing+Script&family=Exo&family=Fira+Sans:wght@300&family=Lato&family=Lobster&family=Playfair+Display&family=Quicksand&display=swap');
@@ -18,14 +20,14 @@
     position: sticky;
     top: 0px;
     box-shadow: 0px 3px 25px black;
-    backdrop-filter:blur(15px);
+    backdrop-filter:blur(6px);
     color:tomato;
     border-bottom:1px tomato solid;
     user-select: none;
     letter-spacing: 5px;
   }
 
-    body{
+    body,footer{
       background-color: #111;
       text-align: center;
       padding:0px;
@@ -50,12 +52,38 @@
     a:hover li{
       background-color:#444;
       border: 1px white dashed;
+      background: #fe6d73;
+    background-color: #fe6d73;
+    background: conic-gradient(
+    tomato 16.666%,
+    rgb(0, 0, 0) 60.666%,
+
+    tomato 50%,
+    rgb(0, 0, 0) 55.666%,
+    tomato 80.333%,
+    tomato 35.666%,
+    tomato 73.333%
+    
+      
+    
+   );
+    background-size: 57%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+
+ animation: rainbow-text-animation-rev 0.5s ease forwards;
+  cursor: pointer;
+  animation-name:rainbow-text-animation,rainbow-text-animation-rev;
+  animation-duration: 3s, 4s;
+  animation-iteration-count: infinite;
     }
     a{
       text-decoration: none;
       color:tomato;
       user-select: none;
       background: none;
+      
       
     }
     a:visited{
@@ -65,6 +93,104 @@
       color: white;
       background:none;
     }
+    i{
+      color: tomato;
+      transition: all 0.8s ease;
+    }
+     
+    footer{
+      padding: 10px 20px 1px 20px;
+      color: tomato;
+      background-color: #444;
+      height: 90px;
+      color: tomato;
+      position: relative;
+      bottom:00px;
+      border-top:1px tomato solid;
+      user-select: none;
+    }
+    #socials{
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.6rem;
+      opacity: 0.6;
+      transition: all 0.2s ease;
+      padding:0px 30%;
+    }
+    i:active{
+      opacity: 0;
+    }
+    i:hover{
+      color: orange;
+      opacity: 0.4;
+    }
+    p{
+      color: tomato;
+      font-weight:700;
+    }
+    .mb, .c{
+      display: inline-block;
+    }
+    .mb{
+      color: tomato;
+      opacity: 0.7;
+    }
+    h1{
+    background: #fe6d73;
+    background-color: #fe6d73;
+    background: conic-gradient(
+    tomato 16.666%,
+    rgb(0, 0, 0) 60.666%,
+
+    tomato 50%,
+    tomato 55.666%,
+    tomato 80.333%,
+    tomato 35.666%,
+    tomato 73.333%
+    
+      
+    
+   );
+    background-size: 57%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+
+ animation: rainbow-text-animation-rev 0.5s ease forwards;
+  cursor: pointer;
+  animation-name:rainbow-text-animation,rainbow-text-animation-rev;
+  animation-duration: 3s, 4s;
+  animation-iteration-count: infinite;
+  }
+@keyframes rainbow-text-animation {
+  0% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 300%;
+    background-position: -10em 1em;
+  }
+}
+
+@keyframes rainbow-text-animation-rev {
+  0% {
+    background-size: 300%;
+    background-position: -10em 1em;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+}
   </style>
 </head>
 <body>
@@ -82,10 +208,31 @@
       <a href="guessTheNumber.html" id="a" target="_blank"><li>Guess the number game</li></a>
       <a href="buttons.html" id="a" target="_blank"><li>Using buttons</li></a>
       <a href="rect.html" id="a" target="_blank"><li>Rectangle formation using characters</li></a>
-      <a href="array.html" id="a" target="_blank"><li>Arrays</li></a>
+      <a href="arrays.html" id="a" target="_blank"><li>Arrays</li></a>
     </ul>
     
   </nav>
+  <footer>
+    <div id="socials">
+       <a href="https://www.linkedin.com/in/rahul-panchal-05610824a/"><i class="lni lni-linkedin"></i></a>
+        
+        <a href="https://discordapp.com/users/rahul_16#7843"> <i class="lni lni-discord"></i></a>
+        
+        <a href="https://github.com/rahulpanchal0106">
+          <i class="lni lni-github"></i>
+        </a>
+        
+        <a href="https://www.instagram.com/rahulpanchal_._/"><i class="lni lni-instagram"></i></a>
+    </div>
+  
+    <h5 class="mb">Made by </h5>
+    <p class="c">
+      &copy;Rahul Panchal
+    </p>
+    
+    
+  
+  </footer>
 </body>
 
 </html>
