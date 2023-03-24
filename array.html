@@ -39,22 +39,32 @@
             border-radius: 5px;
             border: 1px white solid; 
             width: 54%;
-            margin-top: 20%;
+            margin-top: 15%;
         }
         input:focus{
             border-color: tomato;
+        }
+        #display, #sorted, #inverted{
+          border: 1px gray solid;
+          border-radius: 5px;
+          background-color: #666;
+          margin: 10% 10px 10% 10px;
+          padding: 30px;
+          transition: all 0.2s ease;
+          overflow: scroll ;
         }
         button{
             color: rgb(193, 193, 193);
             background-color: #333;
             padding: 10px;
             border-radius: 5px;
-            border: 1px white solid; 
+            border: 3px white solid; 
             margin-top: 10%;
+            transition: all 0.2s ease;
         }
         button:active{
             color: tomato;
-            background-color: #333;
+            background-color: white;
             border-color: tomato;
         }
 
@@ -62,14 +72,21 @@
 </head>
 <body>
     <header>Arrays</header>
+    <h4>
+      To make an array,<br>
+      Type any real number except 0<br>
+      And then hit enter to add the number in array.
+    </h4>
     <input type="number" id="input" placeholder="Hit enter after typing the number" required>
-    <div id="display"></div>
+    <div id="display">The Array will be displayed here</div>
     <br>
     <button id="sort">Sort the array</button>
-    <div id="sorted"></div>
+    <div id="sorted">The sorted array will be displayed here</div>
+    <button id="inverse">Inverse the array</button>
+      <div id="inverted">The inverted array will be displayed here</div>
 </body>
 <script>
-    var numbers=[], number,index, x, num, i;
+    var numbers=[], number,index, x, num, i, sortedNumbers;
     document.getElementById("input").onchange=function(){
         let input = document.getElementById("input").value;
         input=Number(input);
@@ -90,19 +107,24 @@
             
         }
         console.log(numbers);
-        document.getElementById("display").innerHTML=numbers;
+        document.getElementById("display").innerHTML=`The Array: [ ${numbers}  ]`;
+        document.getElementById("input").value=" ";
         
     }
 
     document.getElementById("sort").onclick = function(){
-        let sortedNumbers=numbers.sort(function(a,b){
+        sortedNumbers=numbers.sort(function(a,b){
             return a-b
         });
-        document.getElementById("sorted").innerHTML=sortedNumbers;
+        document.getElementById("sorted").innerHTML=`The sortedArray = [ ${sortedNumbers} ]`;
 
-       
+      
     }
+    document.getElementById("inverse"). onclick=function (){
+      let inverted=numbers.reverse();
 
+      document.getElementById("inverted"). innerHTML=inverted;
+    }
 
 </script>
 </html>
