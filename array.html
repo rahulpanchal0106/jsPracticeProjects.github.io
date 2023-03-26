@@ -39,7 +39,7 @@
             border-radius: 5px;
             border: 1px white solid; 
             width: 54%;
-            margin-top: 15%;
+            margin-top: 5%;
         }
         input:focus{
             border-color: tomato;
@@ -48,10 +48,11 @@
           border: 1px gray solid;
           border-radius: 5px;
           background-color: #666;
-          margin: 10% 10px 10% 10px;
+          margin: 10px 10px 10px 10px;
           padding: 30px;
           transition: all 0.2s ease;
           overflow: scroll ;
+          -webkit-overflow-scrolling: none;
         }
         button{
             color: rgb(193, 193, 193);
@@ -59,8 +60,9 @@
             padding: 10px;
             border-radius: 5px;
             border: 3px white solid; 
-            margin-top: 10%;
+            margin-top: 20px;
             transition: all 0.2s ease;
+            user-select: none;
         }
         button:active{
             color: tomato;
@@ -78,7 +80,11 @@
       And then hit enter to add the number in array.
     </h4>
     <input type="number" id="input" placeholder="Hit enter after typing the number" required>
+<<<<<<< HEAD
     <button id="rm">Backspace</button>
+=======
+    <button id="rm">Backspace </button>
+>>>>>>> 7f90c16909d9117344099b28354483a503cfc2d9
     <div id="display">The Array will be displayed here</div>
     <br>
     <button id="sort">Sort the array</button>
@@ -131,6 +137,10 @@
 
       document.getElementById("inverted"). innerHTML=inverted;
     }
+      document.getElementById("rm").onclick=function (){
+      let rm=numbers.pop();
 
+      document.getElementById("display"). innerHTML=`The Array: [${numbers}]`;
+    }
 </script>
 </html>
