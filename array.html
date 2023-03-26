@@ -78,6 +78,7 @@
       And then hit enter to add the number in array.
     </h4>
     <input type="number" id="input" placeholder="Hit enter after typing the number" required>
+    <button id="rm">Backspace</button>
     <div id="display">The Array will be displayed here</div>
     <br>
     <button id="sort">Sort the array</button>
@@ -86,7 +87,7 @@
       <div id="inverted">The inverted array will be displayed here</div>
 </body>
 <script>
-    var numbers=[], number,index, x, num, i, sortedNumbers;
+    var numbers=[], number,index, x, num, i, sortedNumbers,rmed, updated=[];
     document.getElementById("input").onchange=function(){
         let input = document.getElementById("input").value;
         input=Number(input);
@@ -110,6 +111,11 @@
         document.getElementById("display").innerHTML=`The Array: [ ${numbers}  ]`;
         document.getElementById("input").value=" ";
         
+    }
+    document.getElementById("rm").onclick=function(){
+        rmed=numbers.pop(input);
+        updated=number[]
+        document.getElementById("display").innerHTML=updated;
     }
 
     document.getElementById("sort").onclick = function(){
