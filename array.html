@@ -44,15 +44,27 @@
         input:focus{
             border-color: tomato;
         }
-        #display, #sorted, #inverted{
+        #display{
           border: 1px gray solid;
           border-radius: 5px;
           background-color: #666;
           margin: 10px 10px 10px 10px;
           padding: 30px;
           transition: all 0.2s ease;
-          overflow: scroll ;
-          -webkit-overflow-scrolling: none;
+          overflow:auto;
+          display: none;
+        
+          
+        }
+        #sorted, #inverted{
+          border: 2px rgb(255, 255, 255) dashed;
+          border-radius: 5px;
+          background-color: #333;
+          margin: 10px 10px 10px 10px;
+          padding: 30px;
+          transition: all 0.2s ease;
+          overflow:auto;
+          display: none;
         }
         button{
             color: rgb(193, 193, 193);
@@ -69,6 +81,16 @@
             background-color: white;
             border-color: tomato;
         }
+        #rm{
+            color: tomato;
+            background-color: black;
+            border-color: black;
+        }
+        #rm:active{
+            border-color: tomato;
+            background-color: #333;
+            color: white;
+        }
 
     </style>
 </head>
@@ -80,11 +102,7 @@
       And then hit enter to add the number in array.
     </h4>
     <input type="number" id="input" placeholder="Hit enter after typing the number" required>
-<<<<<<< HEAD
-    <button id="rm">Backspace</button>
-=======
     <button id="rm">Backspace </button>
->>>>>>> 7f90c16909d9117344099b28354483a503cfc2d9
     <div id="display">The Array will be displayed here</div>
     <br>
     <button id="sort">Sort the array</button>
@@ -93,15 +111,13 @@
       <div id="inverted">The inverted array will be displayed here</div>
 </body>
 <script>
-    var numbers=[], number,index, x, num, i, sortedNumbers,rmed, updated=[];
+    var numbers=[], number,index, x, num, i, sortedNumbers;
     document.getElementById("input").onchange=function(){
         let input = document.getElementById("input").value;
         input=Number(input);
         if(input==0){
             alert("Please enter a number to add in the array except 0");
 
-        }else if(input==number){
-            alert("This number already exists in the array");
         }else{
             let n = numbers.push(input);
         
@@ -114,33 +130,43 @@
             
         }
         console.log(numbers);
+        document.getElementById("display").style.display="block";
         document.getElementById("display").innerHTML=`The Array: [ ${numbers}  ]`;
         document.getElementById("input").value=" ";
-        
-    }
-    document.getElementById("rm").onclick=function(){
-        rmed=numbers.pop(input);
-        updated=number[]
-        document.getElementById("display").innerHTML=updated;
+        document.getElementById("rm").style.backgroundColor="black";
+        document.getElementById("rm").style.color="tomato";
     }
 
     document.getElementById("sort").onclick = function(){
         sortedNumbers=numbers.sort(function(a,b){
             return a-b
         });
-        document.getElementById("sorted").innerHTML=`The sortedArray = [ ${sortedNumbers} ]`;
+        document.getElementById("sorted").style.display="block";
+        document.getElementById("sorted").innerHTML=`The sortedArray: [ ${sortedNumbers} ]`;
 
       
     }
     document.getElementById("inverse"). onclick=function (){
       let inverted=numbers.reverse();
-
-      document.getElementById("inverted"). innerHTML=inverted;
+      document.getElementById("inverted").style.display="block";
+      document.getElementById("inverted"). innerHTML=`The invertedArray: [ ${inverted} ]`;
     }
-      document.getElementById("rm").onclick=function (){
-      let rm=numbers.pop();
 
+    document.getElementById("rm").onclick=function (){
+      let rm=numbers.pop();
+      document.getElementById("display").style.display="block";
       document.getElementById("display"). innerHTML=`The Array: [${numbers}]`;
     }
+    input.addEventListener('keydown', function(event) {
+        const key = event.key;
+        if (key === "Backspace" || key === "Delete") {
+            let rm=numbers.pop();
+        document.getElementById("display").style.display="block";
+        document.getElementById("rm").style.backgroundColor="tomato";
+        document.getElementById("rm").style.color="black";
+        
+        document.getElementById("display"). innerHTML=`The Array: [${numbers}]`;
+        }
+    });
 </script>
 </html>
