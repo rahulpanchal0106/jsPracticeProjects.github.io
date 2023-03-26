@@ -56,7 +56,7 @@
         
           
         }
-        #sorted, #inverted{
+        #sorted, #inverted, #mdisplay{
           border: 2px rgb(255, 255, 255) dashed;
           border-radius: 5px;
           background-color: #333;
@@ -72,7 +72,7 @@
             padding: 10px;
             border-radius: 5px;
             border: 3px white solid; 
-            margin-top: 20px;
+            margin-top: 10px;
             transition: all 0.2s ease;
             user-select: none;
         }
@@ -105,13 +105,18 @@
     <button id="rm">Backspace </button>
     <div id="display">The Array will be displayed here</div>
     <br>
+
     <button id="sort">Sort the array</button>
-    <div id="sorted">The sorted array will be displayed here</div>
+
     <button id="inverse">Inverse the array</button>
-      <div id="inverted">The inverted array will be displayed here</div>
+
+    <button id="max">Get the maximum number</button>
+
+    <button id="min">Get the minimum number</button>
+
 </body>
 <script>
-    var numbers=[], number,index, x, num, i, sortedNumbers;
+    var numbers=[], number,index, x, num, i, sortedNumbers, main=[];
     document.getElementById("input").onchange=function(){
         let input = document.getElementById("input").value;
         input=Number(input);
@@ -127,46 +132,62 @@
             number = numbers[index];
             number=Number(number);
             console.log(`Index no.: ${index} -------> Number: ${number}  ------- size: ${x}`);
-            
+            main = numbers;
+           
         }
         console.log(numbers);
         document.getElementById("display").style.display="block";
-        document.getElementById("display").innerHTML=`The Array: [ ${numbers}  ]`;
+        document.getElementById("display").innerHTML=`The Array: [ ${numbers} ]`;
         document.getElementById("input").value=" ";
         document.getElementById("rm").style.backgroundColor="black";
         document.getElementById("rm").style.color="tomato";
+        
     }
+
 
     document.getElementById("sort").onclick = function(){
         sortedNumbers=numbers.sort(function(a,b){
             return a-b
         });
-        document.getElementById("sorted").style.display="block";
-        document.getElementById("sorted").innerHTML=`The sortedArray: [ ${sortedNumbers} ]`;
 
+        document.getElementById("display").innerHTML=`The sortedArray: [ ${sortedNumbers} ]`;
+        document.getElementById("rm").style.backgroundColor="black";
+        document.getElementById("rm").style.color="tomato";
       
     }
     document.getElementById("inverse"). onclick=function (){
-      let inverted=numbers.reverse();
-      document.getElementById("inverted").style.display="block";
-      document.getElementById("inverted"). innerHTML=`The invertedArray: [ ${inverted} ]`;
-    }
+        let inverted=numbers.reverse();
+
+        document.getElementById("display"). innerHTML=`The invertedArray: [ ${inverted} ]`;
+        document.getElementById("rm").style.backgroundColor="black";
+        document.getElementById("rm").style.color="tomato";
+        }
 
     document.getElementById("rm").onclick=function (){
-      let rm=numbers.pop();
-      document.getElementById("display").style.display="block";
-      document.getElementById("display"). innerHTML=`The Array: [${numbers}]`;
+        let rm=numbers.pop();
+        document.getElementById("display").style.display="block";
+        document.getElementById("display"). innerHTML=`The Array: [${numbers}]`;
     }
     input.addEventListener('keydown', function(event) {
         const key = event.key;
         if (key === "Backspace" || key === "Delete") {
             let rm=numbers.pop();
-        document.getElementById("display").style.display="block";
-        document.getElementById("rm").style.backgroundColor="tomato";
-        document.getElementById("rm").style.color="black";
-        
-        document.getElementById("display"). innerHTML=`The Array: [${numbers}]`;
+            document.getElementById("display").style.display="block";
+            document.getElementById("rm").style.backgroundColor="tomato";
+            document.getElementById("rm").style.color="black";
+            
+            document.getElementById("display"). innerHTML=`The Array: [${numbers}]`;
         }
     });
+    document.getElementById("max").onclick = function(){
+        let max = Math.max(...numbers);
+        document.getElementById("display").innerHTML = `Maximum number of this array: ${max}`;
+        console.log(`Max: ${max}`);
+    }
+    document.getElementById("min").onclick = function(){
+        let min = Math.min(...numbers);
+        document.getElementById("display").innerHTML = `Minimum number of this array: ${min}`;
+        console.log(`min: ${min}`);
+    }
 </script>
 </html>
