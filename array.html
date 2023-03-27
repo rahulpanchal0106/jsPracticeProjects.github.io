@@ -39,16 +39,16 @@
             border-radius: 5px;
             border: 1px white solid; 
             width: 54%;
-            margin-top: 5%;
+            margin-top: 0px;
         }
         input:focus{
             border-color: tomato;
         }
         #display{
-          border: 1px gray solid;
+          border: 1px rgb(219, 219, 219) solid;
           border-radius: 5px;
           background-color: #666;
-          margin: 10px 10px 10px 10px;
+          margin: 20px 20px 0px 20px;
           padding: 30px;
           transition: all 0.2s ease;
           overflow:auto;
@@ -56,15 +56,11 @@
         
           
         }
-        #sorted, #inverted, #mdisplay{
-          border: 2px rgb(255, 255, 255) dashed;
-          border-radius: 5px;
-          background-color: #333;
-          margin: 10px 10px 10px 10px;
-          padding: 30px;
-          transition: all 0.2s ease;
-          overflow:auto;
-          display: none;
+
+        #butts{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 0px;
         }
         button{
             color: rgb(193, 193, 193);
@@ -75,6 +71,7 @@
             margin-top: 10px;
             transition: all 0.2s ease;
             user-select: none;
+            width:100px;
         }
         button:active{
             color: tomato;
@@ -105,18 +102,22 @@
     <button id="rm">Backspace </button>
     <div id="display">The Array will be displayed here</div>
     <br>
+    <div id="butts">
+    
+        <button id="sort">Sort</button>
 
-    <button id="sort">Sort the array</button>
+        <button id="inverse">Reverse</button>
 
-    <button id="inverse">Inverse the array</button>
+        <button id="maxmin">Maximum</button>
+        
+        <button id="odd">Odd</button>
 
-    <button id="max">Get the maximum number</button>
-
-    <button id="min">Get the minimum number</button>
+    </div>
+    
 
 </body>
 <script>
-    var numbers=[], number,index, x, num, i, sortedNumbers, main=[];
+    var numbers=[], number,index, x, num, i, sortedNumbers, main=[], count=0;
     document.getElementById("input").onchange=function(){
         let input = document.getElementById("input").value;
         input=Number(input);
@@ -179,15 +180,43 @@
             document.getElementById("display"). innerHTML=`The Array: [${numbers}]`;
         }
     });
-    document.getElementById("max").onclick = function(){
-        let max = Math.max(...numbers);
-        document.getElementById("display").innerHTML = `Maximum number of this array: ${max}`;
-        console.log(`Max: ${max}`);
+
+    var maxminCount=0;
+    document.getElementById("maxmin").onclick = function(){
+        maxminCount+=1;
+        if(maxminCount%2!=0){
+            let max = Math.max(...numbers);
+            document.getElementById("maxmin").innerHTML="Minimum";
+            document.getElementById("display").innerHTML = `Maximum number of this array: ${max}`;
+            console.log(`Max: ${max}`);
+        }else if(maxminCount%2==0){
+            let min = Math.min(...numbers);
+            document.getElementById("maxmin").innerHTML="Maximum";
+            document.getElementById("display").innerHTML = `Minimum number of this array: ${min}`;
+            console.log(`min: ${min}`);
+
+        }
     }
-    document.getElementById("min").onclick = function(){
-        let min = Math.min(...numbers);
-        document.getElementById("display").innerHTML = `Minimum number of this array: ${min}`;
-        console.log(`min: ${min}`);
+    
+    document.getElementById("odd").onclick=function(){
+      let odd=[], even=[];
+      for(let number of numbers){
+        if(number%2!=0){
+          odd.push(number);
+        }else if(number%2==0){
+          even.push(number);
+        }
+       
+      }
+      count+=1;
+      if(count%2==0){
+       document.getElementById("odd"). innerHTML="Odd";
+       document.getElementById("display"). innerHTML=`Evens: [ ${even} ]`;
+     }else if(count%2!=0){
+       document.getElementById("odd"). innerHTML="Even";
+      document.getElementById("display"). innerHTML=`Odds: [ ${odd} ]`;
+     }
+     console.log(`counter: ${count}`);
     }
 </script>
 </html>
