@@ -1,29 +1,23 @@
-  
-    var numbers=[], number,index,indexNum, x, num, i, sortedNumbers, main=[], count=0,max,min;
-    document.getElementById("input").onchange=function(){
-        let input = document.getElementById("input").value;
-        input=Number(input);
-        if(input==0){
-            alert("Please enter a number to add in the array except 0");
-
-        }else{
-            let n = numbers.push(input);
+var numbers=[], number,index,indexNum, x, num, i, sortedNumbers, main=[], count=0,max,min;
+document.getElementById("input").onchange=function(){
+    let input = document.getElementById("input").value;
+    input=Number(input);
         
-            x=numbers.length;
+    let n = numbers.push(input);
+        
+    x=numbers.length;
             
-            index=Math.floor(Math.random()*x);
-            number = numbers[index];
-            number=Number(number);
-            console.log(`Index no.: ${index} -------> Number: ${number}  ------- size: ${x}`);
-            main = numbers;
-           
-        }
-        console.log(numbers);
-        document.getElementById("display").style.display="block";
-        document.getElementById("display").innerHTML=`The Array: [ ${numbers} ]`;
-        document.getElementById("input").value=" ";
-        document.getElementById("rm").style.backgroundColor="black";
-        document.getElementById("rm").style.color="tomato";
+    index=Math.floor(Math.random()*x);
+    number = numbers[index];
+    number=Number(number);
+    console.log(`Index no.: ${index} -------> Number: ${number}  ------- size: ${x}`);
+    main = numbers;
+    console.log(numbers);
+    document.getElementById("display").style.display="block";
+    document.getElementById("display").innerHTML=`The Array: [ ${numbers} ]`;
+    document.getElementById("input").value=" ";
+    document.getElementById("rm").style.backgroundColor="black";
+    document.getElementById("rm").style.color="tomato";
         
     }
 
