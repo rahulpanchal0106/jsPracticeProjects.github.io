@@ -107,6 +107,7 @@
     document.getElementById("cancel-filt").onclick=function(){
         counter+=1;
         document.getElementById("filt").style.display="none";
+        document.getElementById("filt-bg").style.display="none";
     }
 
     var counter=1;
@@ -116,6 +117,7 @@
         counter+=1;
         if(counter%2==0){
             document.getElementById("filt").style.display="block";
+            document.getElementById("filt-bg").style.display="block";
             
             document.getElementById("ok-filt").onclick=function(){
                 let filterInput=document.getElementById("filter-input").value;
@@ -125,6 +127,7 @@
                 console.log(`The filtered Array: [${filtA}]`);
                 document.getElementById("display").innerHTML = `The filtered Array: [${filtA}]`;
                 document.getElementById("filt").style.display="none";
+                document.getElementById("filt-bg").style.display="none";
                 counter+=1;
                 function checkNumb(element){
                    if(document.getElementById("above").checked == true){
@@ -142,5 +145,6 @@
         }else if(counter%2!=0 ){
          
             document.getElementById("filt").style.display="none";
+            document.getElementById("filt-bg").style.display="none";
         }
     }
