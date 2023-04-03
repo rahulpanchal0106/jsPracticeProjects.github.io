@@ -46,15 +46,15 @@
             border-color: tomato;
         }
         #display{
-          border: 1px rgb(219, 219, 219) solid;
-          border-radius: 5px;
-          background-color: #666;
-          margin: 20px 20px 0px 20px;
-          padding: 30px;
-          transition: all 0.2s ease;
-          overflow:auto;
-          display: none;
-        
+            border: 1px rgb(219, 219, 219) solid;
+            border-radius: 5px;
+            background-color: #666;
+            margin: 20px 0px 0px 21%;
+            padding: 30px;
+            transition: all 0.2s ease;
+            overflow:auto;
+            display: none;
+            width: 58%;
           
         }
 
@@ -63,6 +63,9 @@
             justify-content: space-evenly;
             flex-wrap: wrap;
             margin-top: 0px;
+            width: 50%;
+            margin-left:25%;
+         
         }
         button{
             color: rgb(193, 193, 193);
@@ -97,31 +100,54 @@
             background-color: #333;
             color: white;
         }
+        #filt-bg{
+            display: none;
+            position: fixed;
+            width: 100vw;
+            height:1000px;
+            margin: 0px;
+            padding: 0px;
+            top: -100px;
+            background-color: rgba(0, 0, 0, 0.36);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            
+        }
         #filt{
             display: none;
             position: absolute;
+            width: 25%;
+            height: auto;
             background-color: #22222239;
             backdrop-filter: blur(10px);
             border: 2px white dashed;
             padding: 10px;
             border-radius: 4px;
+            margin-left:37.5%;
+            margin-top: 45vh;
+            overflow: auto;
+        }
+        #checks{
+            display: flex;
+
+            flex-wrap: wrap;
+           
+          margin: 0px;
+
         }
         .flabels{
             margin-left: -30px;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
            
 
         }
 
         #above,#below,#eq{
-            margin-left: -18px;
-            padding: 0px;
-            color: tomato;
-            background-color: tomato;
-            
+            margin: 10px 0px;
         }
         #filter-input{
             margin: 5px;
+            width: 80%;
             
         }
         #ok-filt,#cancel-filt{
@@ -163,12 +189,16 @@
         <button id="odd">Odd</button>
         
         <button id="filter">Filter</button>
+    </div>
+    <div id="filt-bg">
         <div id="filt">
             <input type="number" id="filter-input" placeholder="Filter the number">
             <br>
-            <input type="radio" id="above" name="fnumber"><label class="flabels" for="above">Above</label>
-            <input type="radio" id="eq" name="fnumber"><label class="flabels" for="eq">Equal</label>
-            <input type="radio" id="below" name="fnumber"><label class="flabels" for="below">Below</label>
+            <div id="checks">
+                <input type="radio" id="above" name="fnumber"><label class="flabels" for="above">Above</label>
+                <input type="radio" id="eq" name="fnumber"><label class="flabels" for="eq">Equal</label>
+                <input type="radio" id="below" name="fnumber"><label class="flabels" for="below">Below</label>
+            </div>
             <br>
             <button id="ok-filt">Ok</button>
             <button id="cancel-filt">Cancel</button>
