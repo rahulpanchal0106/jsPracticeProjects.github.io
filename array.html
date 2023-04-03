@@ -31,6 +31,7 @@
             text-align: center;
             padding:0px;
             margin: 0px;
+            min-width: 230px;
         }
         input{
             color: rgb(193, 193, 193);
@@ -60,14 +61,15 @@
         #butts{
             display: flex;
             justify-content: space-evenly;
+            flex-wrap: wrap;
             margin-top: 0px;
         }
         button{
             color: rgb(193, 193, 193);
             background-color: #333;
             padding: 10px;
-            border-radius: 5px;
-            border: 3px white solid; 
+            border-radius: 3px;
+            border: 1px white solid; 
             margin-top: 10px;
             transition: all 0.2s ease;
             user-select: none;
@@ -77,6 +79,13 @@
             color: tomato;
             background-color: white;
             border-color: tomato;
+        }
+        button:hover{
+            color: rgb(255, 255, 255);
+            font-size:0.7rem;
+            background-color:tomato ;
+            border-color: rgb(255, 255, 255);
+            width: 85px;
         }
         #rm{
             color: tomato;
@@ -88,7 +97,48 @@
             background-color: #333;
             color: white;
         }
+        #filt{
+            display: none;
+            position: absolute;
+            background-color: #22222239;
+            backdrop-filter: blur(10px);
+            border: 2px white dashed;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .flabels{
+            margin-left: -30px;
+            font-size: 1.3rem;
+           
 
+        }
+
+        #above,#below,#eq{
+            margin-left: -18px;
+            padding: 0px;
+            color: tomato;
+            background-color: tomato;
+            
+        }
+        #filter-input{
+            margin: 5px;
+            
+        }
+        #ok-filt,#cancel-filt{
+            font-size: 0.8rem;
+            width: 70px;
+            border: 1px black solid;
+            transition: all 0.5 ease ;
+        }
+        #ok-filt:active,#cancel-filt:active{
+
+            width: 80px;
+            border: 1px rgb(255, 255, 255) solid;
+        }
+        #ok-filt:hover,#cancel-filt:hover{
+            width: 60px;
+            border: 2px rgb(17, 17, 17) dotted;
+        }
     </style>
 </head>
 <body>
@@ -111,112 +161,25 @@
         <button id="maxmin">Maximum</button>
         
         <button id="odd">Odd</button>
-
+        
+        <button id="filter">Filter</button>
+        <div id="filt">
+            <input type="number" id="filter-input" placeholder="Filter the number">
+            <br>
+            <input type="radio" id="above" name="fnumber"><label class="flabels" for="above">Above</label>
+            <input type="radio" id="eq" name="fnumber"><label class="flabels" for="eq">Equal</label>
+            <input type="radio" id="below" name="fnumber"><label class="flabels" for="below">Below</label>
+            <br>
+            <button id="ok-filt">Ok</button>
+            <button id="cancel-filt">Cancel</button>
+            <p id="filter-num"></p>
+        </div>
     </div>
     
-
+    <!-- <button id="test">test</button> -->
 </body>
-<script>
-    var numbers=[], number,index, x, num, i, sortedNumbers, main=[], count=0;
-    document.getElementById("input").onchange=function(){
-        let input = document.getElementById("input").value;
-        input=Number(input);
-        if(input==0){
-            alert("Please enter a number to add in the array except 0");
-
-        }else{
-            let n = numbers.push(input);
-        
-            x=numbers.length;
-            
-            index=Math.floor(Math.random()*x);
-            number = numbers[index];
-            number=Number(number);
-            console.log(`Index no.: ${index} -------> Number: ${number}  ------- size: ${x}`);
-            main = numbers;
-           
-        }
-        console.log(numbers);
-        document.getElementById("display").style.display="block";
-        document.getElementById("display").innerHTML=`The Array: [ ${numbers} ]`;
-        document.getElementById("input").value=" ";
-        document.getElementById("rm").style.backgroundColor="black";
-        document.getElementById("rm").style.color="tomato";
-        
-    }
+<script src="array.js">
 
 
-    document.getElementById("sort").onclick = function(){
-        sortedNumbers=numbers.sort(function(a,b){
-            return a-b
-        });
-
-        document.getElementById("display").innerHTML=`The sortedArray: [ ${sortedNumbers} ]`;
-        document.getElementById("rm").style.backgroundColor="black";
-        document.getElementById("rm").style.color="tomato";
-      
-    }
-    document.getElementById("inverse"). onclick=function (){
-        let inverted=numbers.reverse();
-
-        document.getElementById("display"). innerHTML=`The invertedArray: [ ${inverted} ]`;
-        document.getElementById("rm").style.backgroundColor="black";
-        document.getElementById("rm").style.color="tomato";
-        }
-
-    document.getElementById("rm").onclick=function (){
-        let rm=numbers.pop();
-        document.getElementById("display").style.display="block";
-        document.getElementById("display"). innerHTML=`The Array: [${numbers}]`;
-    }
-    input.addEventListener('keydown', function(event) {
-        const key = event.key;
-        if (key === "Backspace" || key === "Delete") {
-            let rm=numbers.pop();
-            document.getElementById("display").style.display="block";
-            document.getElementById("rm").style.backgroundColor="tomato";
-            document.getElementById("rm").style.color="black";
-            
-            document.getElementById("display"). innerHTML=`The Array: [${numbers}]`;
-        }
-    });
-
-    var maxminCount=0;
-    document.getElementById("maxmin").onclick = function(){
-        maxminCount+=1;
-        if(maxminCount%2!=0){
-            let max = Math.max(...numbers);
-            document.getElementById("maxmin").innerHTML="Minimum";
-            document.getElementById("display").innerHTML = `Maximum number of this array: ${max}`;
-            console.log(`Max: ${max}`);
-        }else if(maxminCount%2==0){
-            let min = Math.min(...numbers);
-            document.getElementById("maxmin").innerHTML="Maximum";
-            document.getElementById("display").innerHTML = `Minimum number of this array: ${min}`;
-            console.log(`min: ${min}`);
-
-        }
-    }
-    
-    document.getElementById("odd").onclick=function(){
-      let odd=[], even=[];
-      for(let number of numbers){
-        if(number%2!=0){
-          odd.push(number);
-        }else if(number%2==0){
-          even.push(number);
-        }
-       
-      }
-      count+=1;
-      if(count%2==0){
-       document.getElementById("odd"). innerHTML="Odd";
-       document.getElementById("display"). innerHTML=`Evens: [ ${even} ]`;
-     }else if(count%2!=0){
-       document.getElementById("odd"). innerHTML="Even";
-      document.getElementById("display"). innerHTML=`Odds: [ ${odd} ]`;
-     }
-     console.log(`counter: ${count}`);
-    }
 </script>
 </html>
