@@ -135,6 +135,7 @@
     .mb{
       color: tomato;
       opacity: 0.7;
+      
     }
     h1{
     background: #fe6d73;
@@ -160,9 +161,42 @@
  animation: rainbow-text-animation-rev 0.5s ease forwards;
   cursor: pointer;
   animation-name:rainbow-text-animation,rainbow-text-animation-rev;
-  animation-duration: 3s, 4s;
+  animation-duration: 7s, 2s;
   animation-iteration-count: infinite;
   }
+  #heart{
+    color: red;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.8s ease;
+    animation: beats 1s ease infinite;
+    
+  }
+  #heart:hover {
+    animation: none;
+  }
+  #heart:active {
+    transform: rotate(00deg);
+    position: absolute;
+    margin: 80px;
+  }
+  @keyframes beats{
+    0%{
+      font-size: 1rem;
+      transform: rotate(10deg);
+    }
+    20%{
+      font-size: 1.2rem;
+    }
+    50%{
+      font-size: 1.3rem;
+    }
+    100%{
+      font-size: 1rem;
+    }
+  }
+  
 @keyframes rainbow-text-animation {
   0% {
     background-size: 57%;
@@ -172,9 +206,9 @@
     background-size: 57%;
     background-position: 0 1em;
   }
-  100% {
+  50% {
     background-size: 300%;
-    background-position: -10em 1em;
+    background-position: -100em 1em;
   }
 }
 
@@ -187,7 +221,7 @@
     background-size: 57%;
     background-position: 0 1em;
   }
-  100% {
+  50% {
     background-size: 57%;
     background-position: 0 0;
   }
@@ -226,10 +260,11 @@
         
         <a href="https://www.instagram.com/rahulpanchal_._/"><i class="lni lni-instagram"></i></a>
     </div>
-  
-    <h5 class="mb">Made by </h5>
+    
+    
+    <h5 class="mb">Made with </h5><button id="heart">♥️</button> by
     <p class="c">
-      &copy;Rahul Panchal
+       Rahul Panchal
     </p>
     
     
