@@ -62,7 +62,8 @@
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
-            margin-top: 50px;
+            margin-top: 30px;
+            margin-bottom: 30px;
             width: 40%;
             margin-left:30%;
          
@@ -165,13 +166,26 @@
             width: 60px;
             border: 2px rgb(17, 17, 17) dotted;
         }
+        footer{
+            padding: 10px 20px 1px 20px;
+            color: tomato;
+            background-color: #444;
+            height:5vh;
+            color: tomato;
+            position: fixed;
+            bottom:00px;
+            width: 100%;
+            border-top:1px tomato solid;
+            user-select: none;
+            margin: 0px;
+        }
     </style>
 </head>
 <body>
     <header>Arrays</header>
     <h4>
       To make an array,<br>
-      Type any real number except 0<br>
+      Type any real number<br>
       And then hit enter to add the number in array.
     </h4>
     <input type="number" id="input" placeholder="Hit enter after typing the number" required>
@@ -189,6 +203,8 @@
         <button id="odd">Odd</button>
         
         <button id="filter">Filter</button>
+        
+        <button id="reduce">Reduce</button>
     </div>
     <div id="filt-bg">
         <div id="filt">
@@ -207,9 +223,10 @@
     </div>
     
     <!-- <button id="test">test</button> -->
+
+    <footer>
+        Add some new features to this array!
+    </footer>
 </body>
-<script src="array.js">
-
-
-</script>
+<script src="array.js"></script>
 </html>
