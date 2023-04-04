@@ -118,7 +118,7 @@ document.getElementById("input").onchange=function(){
                 console.log(`filterInput: ${filterInput}`);
 
                 let filtA=numbers.filter(checkNumb);
-                console.log(`The filtered Array: [${filtA}]`);
+                console.log(`The filtered Array: [${filtA}]`);    
                 document.getElementById("display").innerHTML = `The filtered Array: [${filtA}]`;
                 document.getElementById("filt").style.display="none";
                 document.getElementById("filt-bg").style.display="none";
@@ -142,3 +142,14 @@ document.getElementById("input").onchange=function(){
             document.getElementById("filt-bg").style.display="none";
         }
     }
+
+//Reduce
+let reduceCounter=0;
+document.getElementById("reduce").onclick=()=>{
+    reduceCounter+=1;
+    var summ=numbers.reduce(checkOuts);
+    document.getElementById("display").innerHTML=`The reduced Array: [${sum}]`;
+    function checkOuts(summ,element){
+        return summ+element;
+    }
+}
