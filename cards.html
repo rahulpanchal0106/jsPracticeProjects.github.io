@@ -5,7 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cards</title>
+  <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
   <style>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dancing+Script&family=Exo&family=Fira+Sans:wght@300&family=Lato&family=Lobster&family=Playfair+Display&family=Quicksand&display=swap');
+    *{
+      font-family:Quicksand;
+    }
+    a{
+      color: white;
+      
+    }
+    a:visited{
+      color: white;
+    }
     body{
       color:white;
       text-align: center;
@@ -37,6 +49,13 @@
       border-radius: 7px;
       transition: all 0.7s ease;
     }
+    footer{
+      position: absolute;
+    
+      bottom: 0px;
+      text-align: center;
+      width: 96%;
+    }
   </style>
 </head>
 
@@ -50,6 +69,9 @@
     </div>
     <button id="shuffle">Shuffle</button>
   </main>
+  <footer>
+    <a id="home" class="lni lni-home" href="index.html"></a>
+  </footer>
 </body>
 
 <script src="cards.js">
