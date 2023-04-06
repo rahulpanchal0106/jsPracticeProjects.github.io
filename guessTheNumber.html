@@ -13,7 +13,7 @@
     }
   body{
     text-align: center;
-    background-color: #888;
+    background-color: #919;
   }
     div{
     margin: 20px;
@@ -94,9 +94,9 @@
         document.getElementById("div").innerHTML += "You cannot use the numbers greater than 20 <br>";
       }else if(ip < 1) {
         document.getElementById("div").innerHTML += "You cannot use the number less than 1 <br>";
-      }else if(ip>corr){
+      }else if(ip>>corr){
         document.getElementById("div").innerHTML += `${ip} is too large <br>`;
-      }else if(ip<corr){
+      }else if(ip<<corr){
         document.getElementById("div").innerHTML +=`${ip} is too small <br>`;
       }
       
