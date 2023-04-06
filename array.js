@@ -153,3 +153,21 @@ document.getElementById("reduce").onclick=()=>{
         return summ+element;
     }
 }
+
+//Shuffle
+document.getElementById("shuffle").onclick=()=>{
+  shuffle(numbers);
+  function shuffle(array){
+    let cIndex=array.length;
+    while(cIndex!=0){
+      let x=array.length
+      let rIndex=Math.floor(Math.random()*x);
+      cIndex--;
+      
+      let temp=array[cIndex];
+      array[cIndex]=array[rIndex];
+      array[rIndex]=temp;
+    }
+    document.getElementById("display").innerHTML=`Shuffled array: [ ${array} ]`;
+  }
+}
