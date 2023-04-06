@@ -147,7 +147,7 @@ document.getElementById("input").onchange=function(){
 let reduceCounter=0;
 document.getElementById("reduce").onclick=()=>{
     reduceCounter+=1;
-    var summ=numbers.reduce(checkOuts);
+    var sum=numbers.reduce(checkOuts);
     document.getElementById("display").innerHTML=`The reduced Array: [${sum}]`;
     function checkOuts(summ,element){
         return summ+element;
