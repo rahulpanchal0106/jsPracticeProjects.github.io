@@ -242,6 +242,14 @@
                 color:white;
             }
         }
+        #cartPage{
+          display: none;
+          position: absolute;
+          width: 50vw;
+          height: 100vh;
+          color: black;
+          background-color: grey;
+        }
     </style>
 </head>
 <body id="body">
@@ -298,6 +306,13 @@
             <button id="back">Go Back</button>
             <button id="cart">View Cart</button>
             </div>
+            
+            <div id="cartPage">
+              <div id="added">
+                This is the cartPage
+              </div>
+              <button id="back">Go Back</button>
+            </div>
         
     </div>
 </body>
@@ -311,8 +326,27 @@
     //Going back to the homePage
     document.getElementById("back").onclick=()=>{
         document.getElementById("store").style.display="none";
+        document.getElementById("cartPage").style.display="none";
         document.getElementById("enter").style.display="block";       
     }
+    //objects
+    let cartSize=0;
+    document.getElementById("cart").onclick=()=>{
+      document.getElementById("cartPage").style.display="flex";
+    }
+    //adding product to the cart
+    document.getElementById("add").onclick=()=>{
+      
+      
+      adding(cartSize);
+    }
+      function adding(size){
+        size++;
+         document.getElementById("cartPage").innerHTML+="An item is added";
+        console.log("An item is added");
+        console.log(`CartSize: ${cartSize}`);
+
+      }
 
 </script>
 </html>
