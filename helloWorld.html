@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="ok">ok</button>
+    <div id="display">
+
+    </div>
+</body>
+<script>
+/*    document.getElementById("ok").onclick=()=>{
+        
+        let arr1=['h']
+        let arr=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
+        hello();
+        function hello(){
+            
+            for(let i=0;i<1000;i++){
+                console.log('e');
+            }
+            for(let i=0;i<1000;i++){
+                console.log('l');
+            }
+            for(let i=0;i<1000;i++){
+                console.log('l');
+            }
+            for(let i=0;i<1000;i++){
+                console.log('o');
+            } 
+        }
+       
+       let arr=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
+       let x=arr.length;
+       console.log(arr.length);
+       for(let i=0;i<x;i++){
+        
+            if(arr[i]!="h"){
+                
+                console.log(arr[i]);
+            }else if(arr[i]=="h"){
+                for(let j=0;j<=1000;j++){
+                    console.log("h");
+                }
+                continue;
+            }
+            time.sleep(0.2);
+       }
+       
+    
+*/
+/*
+document.getElementById("ok").onclick=()=>{
+    
+  let arr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "u", "v", "w", "x", "y", "z"];
+  let word = ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"];
+  let x = arr.length;
+  //H
+  function print(element) {
+  
+    if (element != "h") {
+      console.log(element);
+    } else if (element == "h") {
+      console.log("h");
+    }
+  }
+  function printh() {
+    for (let i = 0; i <= 10; i++) {
+      console.log("h");
+    }
+  }
+  //E
+  function print1(element) {
+    if (element != "e") {
+      console.log("h" + element);
+    } else if (element == "e") {
+      console.log("h" + "e");
+    }
+  }
+  function printe() {
+    for (let i = 0; i <= 5; i++) {
+      console.log("h" + "e");
+    }
+  }
+  //L
+  function print2(element) {
+    if (element != "l") {
+      console.log("h" + "e" + element);
+    } else if (element == "e") {
+      console.log("h" + "e" + "l");
+    }
+  }
+  function printl() {
+    for (let i = 0; i <= 5; i++) {
+      console.log("h" + "e" + "l");
+    }
+  }
+  //LL
+  function print3(element) {
+    if (element != "l") {
+      console.log("h" + "e" + "l" + element);
+    } else if (element == "e") {
+      console.log("h" + "e" + "l" + "l");
+    }
+  }
+  function printll() {
+    for (let i = 0; i <= 5; i++) {
+      console.log("h" + "e" + "l" + "l");
+    }
+  }
+  //o
+  function print4(element) {
+    if (element != "o") {
+      console.log("h" + "e" + "l" + "l" + element);
+    } else if (element == "o") {
+      console.log("h" + "e" + "l" + "l" + "o");
+    }
+  }
+  function printo() {
+    for (let i = 0; i <= 5; i++) {
+      console.log("h" + "e" + "l" + "l" + "o");
+    }
+  }
+  //" "
+  function print5(element) {
+    if (element != " ") {
+      console.log("h" + "e" + "l" + "l" + "o" + element);
+    } else if (element == "o") {
+      console.log("h" + "e" + "l" + "l" + "o" + " ");
+    }
+  }
+  function printb() {
+    for (let i = 0; i <= 5; i++) {
+      console.log("h" + "e" + "l" + "l" + "o"+" ");
+    }
+  }
+  
+  //w
+  function print6(element) {
+    if (element != "w") {
+      console.log("h" + "e" + "l" + "l" + "o" +" "+ element);
+    } else if (element == "w") {
+      console.log("h" + "e" + "l" + "l" + "o" + " "+"w");
+    }
+  }
+  //o
+  function print7(element) {
+    if (element != "o") {
+      console.log("h" + "e" + "l" + "l" + "o" +" "+"w"+ element);
+    } else if (element == "o") {
+      console.log("h" + "e" + "l" + "l" + "o" + " "+"w"+"o");
+    }
+  }
+  //r
+  function print8(element) {
+    if (element != "r") {
+      console.log("h" + "e" + "l" + "l" + "o" +" "+ "w"+"o"+element);
+    } else if (element == "r") {
+      console.log("h" + "e" + "l" + "l" + "o" + " "+"w"+"o"+"r");
+    }
+  }
+  //l
+  function print9(element) {
+    if (element != "l") {
+      console.log("h" + "e" + "l" + "l" + "o" +" "+"w"+"o"+"r"+element);
+    } else if (element == "l") {
+      console.log("h" + "e" + "l" + "l" + "o" + " "+"w"+"o"+"r"+"l");
+    }
+  }
+  //d
+  function print10(element) {
+    if (element != "d") {
+      console.log("h" + "e" + "l" + "l" + "o" +" "+"w"+"o"+"r"+"l"+ element);
+    } else if (element == "d") {
+      console.log("h" + "e" + "l" + "l" + "o" + " "+"w"+"o"+"r"+"l"+"d");
+    }
+  }
+  
+  function printd() {
+    for (let i = 0; i <= 5; i++) {
+      console.log("h" + "e" + "l" + "l" + "o" + " "+"w"+"o"+"r"+"l"+"d");
+    }
+  }
+  
+  
+  
+  for (let j = 0; j < 200; j++) {
+    arr.forEach(print);
+  }
+  arr.forEach(printh);
+  
+  
+  for (let k = 0; k <= 300; k++) {
+    arr.forEach(print1);
+  
+  }
+  arr.forEach(printe);
+  
+  
+  for (let l = 0; l <= 300; l++) {
+    arr.forEach(print2);
+  
+  }
+  arr.forEach(printl);
+  
+  
+  for (let o = 0; o <= 400; o++) {
+    arr.forEach(print2);
+  
+  }
+  arr.forEach(printll);
+  
+  
+  for (let p = 0; p <= 300; p++) {
+  
+    arr.forEach(print3);
+  }
+  arr.forEach(printo);
+  
+  for (let p = 0; p <= 20; p++) {
+  
+    arr.forEach(print4);
+  }
+  arr.forEach(printb);
+  
+  for (let p = 0; p <= 300; p++) {
+  
+    arr.forEach(print5);
+  }
+  for (let p = 0; p <= 400; p++) {
+  
+    arr.forEach(print6);
+  }
+  for (let p = 0; p <= 300; p++) {
+  
+    arr.forEach(print7);
+  }
+  for (let p = 0; p <= 300; p++) {
+  
+    arr.forEach(print8);
+  }
+  for (let p = 0; p <= 300; p++) {
+  
+    arr.forEach(print9);
+  }
+  for (let p = 0; p <= 300; p++) {
+  
+    arr.forEach(print10);
+  }
+  arr.forEach(printd);
+
+*/
+
+
+document.getElementById("ok").onclick=()=>{
+  let arr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "u", "v", "w", "x", "y", "z"];
+  let word = ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"];
+  let x = arr.length;
+  //H
+  function print(element) {
+
+    if (element != "h") {
+      console.log(element);
+    } else if (element == "h") {
+      console.log("h");
+    }
+  }
+  function printh() {
+    for (let i = 0; i <= 30; i++) {
+      console.log("h");
+    }
+  }
+  //E
+  function print1(element) {
+    if (element != "e") {
+      console.log("h" + element);
+    } else if (element == "e") {
+      console.log("h" + "e");
+    }
+  }
+  function printe() {
+    for (let i = 0; i <= 50; i++) {
+      console.log("h" + "e");
+    }
+  }
+  //L
+  function print2(element) {
+    if (element != "l") {
+      console.log("h" + "e" + element);
+    } else if (element == "l") {
+      console.log("h" + "e" + "l");
+    }
+  }
+  function printl() {
+    for (let i = 0; i <= 50; i++) {
+      console.log("h" + "e" + "l");
+    }
+  }
+  //LL
+  function print3(element) {
+    if (element != "l") {
+      console.log("h" + "e" + "l" + element);
+    } else if (element == "l") {
+      console.log("h" + "e" + "l" + "l");
+    }
+  }
+  function printll() {
+    for (let i = 0; i <= 10; i++) {
+      console.log("h" + "e" + "l" + "l");
+    }
+  }
+  //o
+  function print4(element) {
+    if (element != "o") {
+      console.log("h" + "e" + "l" + "l" + element);
+    } else if (element == "o") {
+      console.log("h" + "e" + "l" + "l" + "o");
+    }
+  }
+  function printo() {
+    for (let i = 0; i <= 10; i++) {
+      console.log("h" + "e" + "l" + "l" + "o");
+    }
+  }
+  //" "
+  function print5(element) {
+    if (element != " ") {
+      console.log("h" + "e" + "l" + "l" + "o" + element);
+    } else if (element == " ") {
+      console.log("h" + "e" + "l" + "l" + "o" + " ");
+    }
+  }
+  function printb() {
+    for (let i = 0; i <= 80; i++) {
+      console.log("h" + "e" + "l" + "l" + "o" + " ");
+    }
+  }
+
+  //w
+  function print6(element) {
+    if (element != "w") {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + element);
+    } else if (element == "w") {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w");
+    }
+  }
+  function printw() {
+    for (let i = 0; i <= 90; i++) {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w");
+    }
+  }
+  //o
+  function print7(element) {
+    if (element != "o") {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w" + element);
+    } else if (element == "o") {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w" + "o");
+    }
+  }
+  function printo() {
+    for (let i = 0; i <= 100; i++) {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w" + "o");
+    }
+  }
+  //r
+  function print8(element) {
+    if (element != "r") {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w" + "o" + element);
+    } else if (element == "r") {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w" + "o" + "r");
+    }
+  }
+  function printr() {
+    for (let i = 0; i <= 100; i++) {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w" + "o" + "r");
+    }
+  }
+
+  //l
+  function print9(element) {
+    if (element != "l") {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w" + "o" + "r" + element);
+    } else if (element == "l") {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w" + "o" + "r" + "l");
+    }
+  }
+  function printl() {
+    for (let i = 0; i <= 100; i++) {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w" + "o" + "r" + "l");
+    }
+  }
+  //d
+  function print10(element) {
+    if (element != "d") {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w" + "o" + "r" + "l" + element);
+    } else if (element == "d") {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w" + "o" + "r" + "l" + "d");
+    }
+  }
+
+  function printd() {
+    for (let i = 0; i <= 60; i++) {
+      console.log("h" + "e" + "l" + "l" + "o" + " " + "w" + "o" + "r" + "l" + "d");
+    }
+  }
+
+
+
+  for (let j = 0; j < 80; j++) {
+    arr.forEach(print);
+  }
+  arr.forEach(printh);
+
+
+  for (let k = 0; k <= 80; k++) {
+    arr.forEach(print1);
+
+  }
+  arr.forEach(printe);
+
+
+  for (let l = 0; l <= 100; l++) {
+    arr.forEach(print2);
+
+  }
+  arr.forEach(printl);
+
+
+  for (let o = 0; o <= 90; o++) {
+    arr.forEach(print3);
+
+  }
+  arr.forEach(printll);
+
+
+  for (let p = 0; p <= 200; p++) {
+
+    arr.forEach(print4);
+  }
+  arr.forEach(printo);
+
+  for (let p = 0; p <= 150; p++) {
+
+    arr.forEach(print5);
+  }
+  arr.forEach(printb);
+
+  for (let p = 0; p <= 200; p++) {
+
+    arr.forEach(print6);
+  }
+  arr.forEach(printw);
+
+  for (let p = 0; p <= 200; p++) {
+
+    arr.forEach(print7);
+  }
+  arr.forEach(printo);
+
+  for (let p = 0; p <= 300; p++) {
+
+    arr.forEach(print8);
+  }
+  arr.forEach(printr);
+
+  for (let p = 0; p <= 300; p++) {
+
+    arr.forEach(print9);
+  }
+  arr.forEach(printl);
+
+  for (let p = 0; p <= 300; p++) {
+
+    arr.forEach(print10);
+  }
+
+  arr.forEach(printd);
+
+}
+
+
+
+
+
+</script>
+</html>
