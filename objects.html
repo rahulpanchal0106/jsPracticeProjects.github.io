@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <button id="i1">item1</button>
+  <button id="i2">item2</button>
+  <button id="i3">item3</button>
+  <button id="i4">item4</button>
+  <button id="i5">item5</button>
+  <div id="display">Cart</div>
+</body>
+
+<script>
+//without objects
+let count=0, i1=0, i2=0, i3=0, i4=0, i5=0;
+
+  document.getElementById("i1").onclick=()=>{
+    i1++;
+    display();
+  }
+  document.getElementById("i2").onclick=()=>{
+    i2++;
+   display();
+  }
+  document.getElementById("i3").onclick =()=>{
+    i3++;
+    display();
+  }
+  document.getElementById("i4").onclick=()=>{
+    i4++;
+    display();
+  }
+  document.getElementById("i5").onclick=()=>{
+    i5++;
+    display();
+  }
+  function display(){
+      count=i1+i2+i3+i4+i5;
+      document.getElementById("display").innerHTML=`Total items = ${i1}i1 + ${i2}i2 + ${i3}i3 + ${i4}i4 + ${i5}i5 = ${count}`;
+  }
+;
+</script>
+
+</html>

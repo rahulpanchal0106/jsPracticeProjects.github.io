@@ -242,6 +242,18 @@
                 color:white;
             }
         }
+        #cartPage{
+          display: none;
+          position: absolute;
+          width: 80vw;
+          height: 70vh;
+          color: black;
+          background-color: grey;
+        }
+        #name1,#name2,#name3,#name4,#name5,#name6{
+          border: 1px white solid;
+          width: 100%;
+        }
     </style>
 </head>
 <body id="body">
@@ -254,49 +266,61 @@
             <div id="conteiner">
                 <div id="item" class="i1">
                     <div id="info">
-                        
+                       <div id="name1">T-shirt</div>
                       <button id="view"> 
                       <a href="https://www.montecarlo.in/product/monte-carlo-boys-red-plain-t-shirt/24157">View</a>
                       
                       </button>
-                        <button id="add">Add</button>
+                        <button id="add1">Add</button>
                         
                     </div>
                 </div>
                 <div id="item" class="i2">
                     <div id="info">
+                      <div id="name2">Jeans Pant</div>
                         <button id="view"><a href="https://www.montecarlo.in/product/monte-carlo-men-blue-slim-fit-denim/34987">View</a></button>
-                        <button id="add">Add</button>
+                        <button id="add2">Add</button>
                     </div>
                 </div>
                 <div id="item" class="i3">
                     <div id="info">
+                      <div id="name3">Belt</div>
                         <button id="view"><a href="https://www.ajio.com/kastner-reversible-belt-with-buckle-strap/p/462631752_black">View</a></button>
-                        <button id="add">Add</button>
+                        <button id="add3">Add</button>
                     </div>
                 </div>
                 <div id="item" class="i4">
                     <div id="info">
+                      <div id="name4">BackPack</div>
                         <button id="view"><a href="https://www.ajio.com/puma-printed-16-laptop-backpack/p/460330559_black">View</a></button>
-                        <button id="add">Add</button>
+                        <button id="add4">Add</button>
                     </div>
                 </div>
                 <div id="item" class="i5">
                     <div id="info">
+                      <div id="name5">A pair of Shoes</div>
                         <button id="view"><a href="https://www.ajio.com/adidas-rush-lace-up-running-shoes/p/460929966_black#gmf">View</a></button>
-                        <button id="add">Add</button>
+                        <button id="add5">Add</button>
                     </div>
                 </div>
                 <div id="item" class="i6">
                     <div id="info">
+                      <div id="name6">Deodorant</div>
                         <button id="view"><a href="https://www.amway.in/deodorant-falcon/p/308490ID">View</a></button>
-                        <button id="add">Add</button>
+                        <button id="add6">Add</button>
                     </div>
                 </div>
             </div> 
             <div id="buttConteiner">
             <button id="back">Go Back</button>
             <button id="cart">View Cart</button>
+            </div>
+            
+            <div id="cartPage">
+              <div id="added">
+                <h1>This is the cartPage</h1>
+              </div>
+              <button id="backCP">Go Back</button>
             </div>
         
     </div>
@@ -311,8 +335,72 @@
     //Going back to the homePage
     document.getElementById("back").onclick=()=>{
         document.getElementById("store").style.display="none";
+       
         document.getElementById("enter").style.display="block";       
     }
-
+    //objects
+    let cartSize=0;
+    
+    document.getElementById("cart").onclick=()=>{
+      document.getElementById("cartPage").style.display="block";
+      
+    }
+    //adding product to the cart
+    let total=0, i1=0, i2=0, i3=0, i4=0, i5=0,i6=0;
+    
+    document.getElementById("add1").onclick=()=>{
+      i1++;
+      let name=document.getElementById("name1").innerHTML;
+      console.log("T-shirt is added to the cart");
+      
+      adding();
+      document.getElementById("cartPage").innerHTML+=`${name} is added to the cart\n`;
+    }
+    document.getElementById("add2").onclick=()=>{
+      i2++;
+      console.log("Jeans pant is added to the cart");
+      adding();
+      let name=document.getElementById("name2").innerHTML;
+      document.getElementById("cartPage").innerHTML+=`${name} is added to the cart\n`;
+    }
+    document.getElementById("add3").onclick=()=>{
+      i3++;
+      adding();
+      let name=document.getElementById("name3").innerHTML;
+      console.log("Belt is added to the cart");
+      document.getElementById("cartPage").innerHTML+=`${name} is added to the cart\n`;
+    }
+    document.getElementById("add4").onclick =()=>{
+      i4++;
+      console.log("BackPack is added to the cart");
+      adding();
+      let name=document.getElementById("name4").innerHTML;
+      document.getElementById("cartPage").innerHTML+=`${name} is added to the cart\n`;
+    }
+    document.getElementById("add5").onclick =()=>{
+      i5++;
+      console.log("Shoes are added to the cart")
+      adding();
+      let name=document.getElementById("name5").innerHTML;
+      document.getElementById("cartPage").innerHTML+=`${name} is added to the cart\n`;
+    }
+    document.getElementById("add6").onclick =()=>{
+      i6++;
+      console.log("Deodorant is added to the cart");
+      adding();
+      let name=document.getElementById("name6").innerHTML;
+      document.getElementById("cartPage").innerHTML+=`${name} is added to the cart\n`;
+    }
+      function adding(){
+        total=i1+i2+i3+i4+i5+i6;
+        
+         
+        
+        console.log(`CartSize: ${total}`);
+        
+      }
+    document.getElementById("backCP").onclick=()=>{
+      document.getElementById("cartPage").style.display="none";
+    }
 </script>
 </html>
