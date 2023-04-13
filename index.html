@@ -13,6 +13,7 @@
     *{
       font-family:Quicksand;
     }
+    
   header{
     height: 10%;
     background-color: #9999994e;
@@ -36,6 +37,9 @@
     }
     ul{
       list-style:none;
+      display: flex;
+      flex-direction: column;
+      padding: 0px;
     }
     li{
       margin: 2rem;
@@ -84,7 +88,7 @@
       color:tomato;
       user-select: none;
       background: none;
-      
+      width: 50%;
       
     }
     a:visited{
@@ -226,6 +230,55 @@
     background-position: 0 0;
   }
 }
+@media  screen and (max-width: 980px) {
+  header{
+    z-index: 3;
+  }
+  #bg{
+    display: block;
+    height: 100%;
+    margin: 50px 0px;
+    z-index: 0;
+    width: 100%;
+    border-radius: 7px;
+  }
+  #box{
+    padding: 0px;
+    
+
+    width: 80%;
+    flex-direction: column;
+    border: 1px rgb(0, 0, 0) solid;
+   
+  }
+  #a{
+    width: 10%;
+    z-index: 1;
+    position:absolute;
+    left: -7px;
+  }
+  
+
+}
+#box{
+  width: 90%;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 00px 0px;
+  padding: 80px 5%;
+  
+
+}
+#bg{
+  width: 90%;
+  height: 100%;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 7px;
+}
   </style>
 </head>
 <body>
@@ -236,19 +289,72 @@
   </header>
   <nav>
     <ul>
-      <a href="RandomGradientGenerator.html" id="a" target="_blank"><li>Random Gradient Generator</li></a>
-      <a href="helloWorld.html" id="a" target="_blank"><li>Hello World</li></a>
-      <a href="passwordGenerator.html" id="a" target="_blank"><li>Password Generator</li></a>
-      <a href="array.html" id="a" target="_blank"><li>Arrays</li></a>
-      <a href="guessTheNumber.html" id="a" target="_blank"><li>Guess the number game</li></a>
-      <a href="getArea.html" id="a" target="_blank"><li>Using function to get area</li></a>
-      <a href="rect.html" id="a" target="_blank"><li>Rectangle formation using characters</li></a>
-      <a href="store.html" id="a" target="_blank"><li>Store</li></a>
-      <a href="cards.html" id="a" target="_blank"><li>Cards</li></a>
-      <a href="dice.html" id="a" target="_blank"><li>Rolling dice</li></a>
-      <a href="circumference.html" id="a" target="_blank"><li>Find circumference of the circle</li></a>
-      <a href="fahCel.html" id="a" target="_blank"><li>Temperature conversion program</li></a>
-      <a href="buttons.html" id="a" target="_blank"><li>Using buttons</li></a>
+      <div id="box">
+        <div id="bg" style="background-image: url(bg/rgg1.png);">
+        </div>
+        <a href="RandomGradientGenerator.html" id="a" target="_blank"><li>Random Gradient Generator</li></a>
+        
+      </div>
+      
+      <div id="box">
+        <div id="bg" style="background-image: url(bg/hw.png);"></div>
+        <a href="helloWorld.html" id="a" target="_blank"><li>Hello World</li></a>
+      </div>
+
+      <div id="box">
+        <div id="bg" style="background-image: url(bg/pass.png);"></div>
+        <a href="passwordGenerator.html" id="a" target="_blank"><li>Password Generator</li></a>
+      </div>
+
+      <div id="box">
+        <div id="bg" style="background-image: url(bg/arr.png);"></div>
+        <a href="array.html" id="a" target="_blank"><li>Arrays</li></a>
+      </div>
+
+      <div id="box">
+        <div id="bg" style="background-image: url(bg/gtn.png);"></div>
+        <a href="guessTheNumber.html" id="a" target="_blank"><li>Guess the number game</li></a>
+      </div>
+
+      <div id="box">
+        <div id="bg" style="background-image: url(bg/func.png);"></div>
+        <a href="getArea.html" id="a" target="_blank"><li>Using function to get area</li></a>
+      </div>
+
+      <div id="box">
+        <div id="bg" style="background-image: url(bg/rect.png);"></div>
+        <a href="rect.html" id="a" target="_blank"><li>Rectangle formation using characters</li></a>
+      </div>
+
+      <div id="box">
+        <div id="bg" style="background-image: url(bg/store.png);"></div>
+        <a href="store.html" id="a" target="_blank"><li>Store</li></a>
+      </div>
+
+      <div id="box">
+        <div id="bg" style="background-image: url(bg/cards.png);"></div>
+        <a href="cards.html" id="a" target="_blank"><li>Cards</li></a>
+      </div>
+
+      <div id="box">
+        <div id="bg" style="background-image: url(bg/dice.png);"></div>
+        <a href="dice.html" id="a" target="_blank"><li>Rolling dice</li></a>
+      </div>
+
+      <div id="box">
+        <div id="bg" style="background-image: url(bg/circ.png);"></div>
+        <a href="circumference.html" id="a" target="_blank"><li>Find circumference of the circle</li></a>
+      </div>
+
+      <div id="box">
+        <div id="bg" style="background-image: url(bg/fah.png);"></div>
+        <a href="fahCel.html" id="a" target="_blank"><li>Temperature conversion program</li></a>
+      </div>
+
+      <div id="box">
+        <div id="bg" style="background-image: url(bg/butt.png);"></div>
+        <a href="buttons.html" id="a" target="_blank"><li>Using buttons</li></a>
+      </div>
     </ul>
     
   </nav>
