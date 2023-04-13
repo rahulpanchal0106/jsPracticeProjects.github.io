@@ -112,9 +112,11 @@
             padding: 10px;
             color:white;
             border:none;
-            background-image: linear-gradient(45deg,#19172e,black,black);
+            background-image: linear-gradient(45deg,#19172e00,black,rgba(0, 0, 0, 0));
             transition: all 0.3s ease;
             user-select: none;
+
+            animation: grad 1.6s ease forwards infinite;
         }
         #ok:hover{
             letter-spacing: 2px;
@@ -132,8 +134,8 @@
             width: 15%;
             padding: 7px;
             border-radius: 7px;
-            border: 1px rgb(169, 169, 169) solid;
-            background-color: black;
+            border: 1px rgba(169, 169, 169, 0.162) solid;
+            background-color:#19172e;
             color: white;
             
         }
@@ -199,6 +201,40 @@
                 transform:rotate(0deg);
             }
         }
+        @keyframes grad{
+            0%{
+                background-color:#19172e91;
+                background-position: 0px 0px;
+                background-size: 0%;
+                background-repeat:repeat;
+            }
+            
+            20%{
+                background-color:#19172e;
+                background-position:120px 0px;
+                background-size: 40%;
+                background-repeat: no-repeat;
+            }
+            45%{
+                background-color:#19172e4f;
+                background-size: 45%;
+                background-position: -80px 0px;
+                background-repeat: repeat;
+            }
+            50%{
+                background-color:#19172e4f;
+                background-size: 100%;
+                background-position: 0px 0px;
+                background-repeat: no-repeat;
+            }
+            100%{
+                background-color:#19172e4f;
+                background-size: 100%;
+                background-position: 0px 0px;
+                background-repeat: no-repeat;
+            }
+            
+        }
     </style>
 </head>
 <body id="body">
@@ -256,7 +292,7 @@
         b1=Math.floor(Math.random()*255);
         b2=Math.floor(Math.random()*255);
         document.getElementById("body").style.transition="all 0.7s ease";
-        document.getElementById("ok").style.backgroundImage=`linear-gradient(${theta}deg,rgb(${r1},${g1},${b1}),black,black)`;
+        document.getElementById("ok").style.backgroundImage=`linear-gradient(${theta}deg,rgb(${r1},${g1},${b1}),black,black,rgb(${r2},${g2},${b2}))`;
         document.getElementById("body").style.backgroundImage=`linear-gradient(${theta}deg,rgb(${r1},${g1},${b1}),rgb(${r2},${g2},${b2}))`;
         document.getElementById("display").style.backgroundImage=`linear-gradient(${theta}deg,rgb(${r1},${g1},${b1}),rgb(${r2},${g2},${b2}))`;
         document.getElementById("txt").innerHTML=`background-image: linear-gradient(${theta}deg,rgb(${r1},${g1},${b1}),rgb(${r2},${g2},${b2}));`;
@@ -265,7 +301,7 @@
         document.getElementById("theta").onchange=()=>{
             let theta=45;
             theta=document.getElementById("theta").value;
-            document.getElementById("ok").style.backgroundImage=`linear-gradient(${theta}deg,rgb(${r1},${g1},${b1}),black,black)`;
+            document.getElementById("ok").style.backgroundImage=`linear-gradient(${theta}deg,rgb(${r1},${g1},${b1}),black,black,rgb(${r2},${g2},${b2}))`;
             document.getElementById("body").style.backgroundImage=`linear-gradient(${theta}deg,rgb(${r1},${g1},${b1}),rgb(${r2},${g2},${b2}))`;
             document.getElementById("display").style.backgroundImage=`linear-gradient(${theta}deg,rgb(${r1},${g1},${b1}),rgb(${r2},${g2},${b2}))`;
             document.getElementById("txt").innerHTML=`background-image: linear-gradient(${theta}deg,rgb(${r1},${g1},${b1}),rgb(${r2},${g2},${b2}));`;
