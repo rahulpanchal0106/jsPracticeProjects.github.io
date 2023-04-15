@@ -6,16 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>map</title>
 </head>
+<style>
+  body{
+    color: white;
+    background-color: black;
+  }
+  #cont{
+    text-align: center;
+  }
+  #total{
+    text-align: center;
+    margin: 30px;
+    font-size: 2rem;
+  }
+  #display{
+    color: white;
+    text-align: center;
+  }
+</style>
 <body>
-    
+    <div id="cont">
+      <label for="input">What do you want?</label>
+      <input type="text" id="input" placeholder="eg. Apple">
+      <br>
+      <label for="qnt">How many?</label>
+      <input type="number" id="qnt" placeholder="eg. 2">
+      <div id="display">
+       
+        <br>
+      
+      </div>
+      <button id="ok">Ok</button>
+      <div id="total"></div>
+    </div>
 </body>
 <script>
     const store = new Map([
-    ["T-shirt",200],
-    ["Jeans",500],
-    ["Belt", 100],
-    ["BackPack",600],
-    ["Shoes",800]
-    ]);
+      ["T-shirt",300],
+      ["Jeans",500],
+      ["Backpack",800],
+      ["Belt",150],
+      ["Shoes",1300]
+      ]);
+    function print(key,value){
+      console.log(`${value}: ${key}₹`);
+      document.getElementById("display"). innerHTML+=`${value}: ${key}₹ <br>`;
+    }
+    store.forEach(print);
+    
+    let total=0,qnt=0;
+   
+    document.getElementById("ok").onclick=()=>{
+      let qnt= document.getElementById("qnt").value;
+      let thing=document.getElementById("input").value;
+      
+      let thingKey=store.get(thing);
+      if(store.has(thing)==false){
+        console.log(`${thing} is not available`);
+        document.getElementById("total"). innerHTML=`${thing} is not available`;
+      }else if(store.has(thing)!=false){
+        total+=thingKey*qnt;
+        console.log(`Total: ${total}₹`);
+        document.getElementById("total").innerHTML=`Total to pay: ${total}₹`;
+      }
+    }
+      
 </script>
 </html>
