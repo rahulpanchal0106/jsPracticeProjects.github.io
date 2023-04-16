@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #666;
+        }
+        #cont{
+            border: 1px white solid;
+            width: 400px;
+            height: 600px;
+            background: url(bg/sprite-sheet.png);
+            animation: stand 0.5s steps(6) infinite;
+        }
+        @keyframes kick{
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: 0 3600px;
+            }
+        }
+        
+        @keyframes stand{
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: 0 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="cont">
+        
+    </div>
+    <div id="buttons">
+        <button id="kick">kick</button>
+    </div>
+</body>
+<script>
+    document.getElementById("kick").onclick=()=>{
+        stand();
+        kick();
+        function kick(){
+            document.getElementById("cont").style.animation="kick 0.5s steps(6) ";
+        }
+        function stand(){
+            document.getElementById("cont").style.animation="stand 0.5s steps(6) ";
+        }
+    }
+</script>
+</html>
