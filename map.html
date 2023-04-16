@@ -6,16 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>map</title>
 </head>
+<style>
+    body{
+        background-color:#111;
+    }
+    #store{
+        border: 1px red solid;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #display{
+        color: white;
+        border: 1px white solid;
+        width: 50%;
+        padding: 20px;
+    }
+</style>
+
 <body>
-    
+    <div id="store">
+        <div id="display">
+
+        </div>
+        
+    </div>
 </body>
 <script>
     const store = new Map([
-    ["T-shirt",200],
-    ["Jeans",500],
-    ["Belt", 100],
-    ["BackPack",600],
-    ["Shoes",800]
+    ["T-shirt",100],
+    ["Jeans",200],
+    ["Belt", 69],
+    ["BackPack",400],
+    ["Shoes",700],
     ]);
+    function print(key, value){
+        console.log(`${value}: $${key}`);
+        document.getElementById("display").innerHTML+=`${value}: $${key}`;
+        var btn=document.createElement("button");
+        btn.innerHTML="buy";
+        document.getElementById("display").appendChild(btn);
+        btn.setAttribute("id","butts");
+        document.getElementById("display").innerHTML+="<br><br>";
+
+       
+    }
+    console.log(">>>Store items<<<");
+    store.forEach(print);
+    store.set("Underwere","400");
+    let cart=0;
+    cart+=store.get("Jeans");
+    cart+=store.get("Belt");
+    console.log(`total: $${cart}`);
+
 </script>
 </html>
