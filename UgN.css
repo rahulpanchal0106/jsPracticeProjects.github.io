@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Caveat:wght@400;700&family=Dancing+Script&family=Exo&family=Fira+Sans:wght@300&family=Lato&family=Lobster&family=Playfair+Display&family=Quicksand&family=Tangerine&family=Titan+One&family=VT323&display=swap');
+
+*{
+    font-family: VT323;
+    font-size: large;
+}
+#h1{
+    font-size: 1.6rem;
+}
+body{
+    background-image: url(bg/UgN.png);
+    background-position: 2% 13%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0px;
+    overflow: hidd;
+}
+
+#display{
+    padding: 10px;
+    font-size: 1.4rem;
+    padding: 5px;
+    display: none;
+    color: black;
+    border-bottom: 2px black solid;
+   margin-top: 13px;
+}
+#set{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 96.5vh;
+    align-content: center;
+    justify-content: center;
+}
+button{
+    border: 2ox black solid;
+
+}
+#corr{
+    width: 120px;
+    background-color:#11221100;
+    border: none;
+    color: rgb(0, 0, 0);
+    border-bottom: 2px grey solid;
+    padding: 7px;
+    font-weight: 640;
+}
+#info{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content:center;
+    justify-items: center;
+    flex-direction: column;
+    flex-direction: column;
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+}
+#corrDisplay{
+    color: white;
+    position: relative;
+    background-color:rgba(100, 148, 237, 1);
+    width: 150px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    background-color: rgb(35, 35, 35);
+    justify-content: center;
+    float: right;
+}
+#tries{
+    position: relative;
+    background-color:rgb(0, 0, 0);
+    color: white;
+    width: 150px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    right: 0px;
+    justify-content: center;
+    float: right;
+}
+#guess,#stat,#guessAgain{
+    margin: 12px;
+    
+}
+#bot{
+    margin: 0px;
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 19%;
+    height: 96.5vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#guessAgain{
+    display: none;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="UgN.css">
+</head>
+<body>
+    <div id="user">
+        
+        <div id="set">
+
+            <input type="number" placeholder="Set the number" id="corr">
+        </div>
+        <div id="info">
+            <h1 id="h1">U guess the number</h1>
+            <div id="corrDisplay">Corr</div>
+            <div id="tries">Total tries: 0</div>
+            <div id="display"></div>
+        </div>
+    </div>
+    <div id="bot">
+        <button id="guess">Guess</button>
+        <select id="stat">
+            <option>--Status--</option>
+            <option value="1">Go higher</option>
+            <option value="2" >Go down</option>
+
+        </select>
+        <button id="guessAgain">Guess again</button>
+    </div>
+   
+</body>
+<script>
+    let arr=[],min,max,counter=0;
+    document.getElementById("corr").onchange=()=>{
+        var correct=document.getElementById("corr").value;
+        document.getElementById("corr").style.display="none";
+        document.getElementById("set").style.display="none";
+        document.getElementById("bot").style.display="flex";
+        document.getElementById("corrDisplay").style.display="flex";
+        document.getElementById("tries").style.display="flex";
+        document.getElementById("corrDisplay").innerHTML=`Correct number: ${correct}`;        
+        //First guess
+        document.getElementById("guess").onclick=()=>{
+            document.getElementById("guess").style.display="none";
+            document.getElementById("guessAgain").style.display="flex";
+            document.getElementById("display").style.display="block";
+            counter++;
+            document.getElementById("tries").innerHTML=`Total trials: ${counter}`;
+            var guessed=Math.floor(Math.random()*20+1);
+            document.getElementById("display").innerHTML=`I guessed the number ${guessed}`;
+
+            arr.push(guessed);
+            console.log(arr);
+            if(guessed==correct){
+                document.getElementById("display").innerHTML=`Yay! ${guessed} is the correct one :D`;
+                document.getElementById("guess").style.display="none";
+                document.getElementById("guessAgain").style.display="none";
+            }
+            //Secondary guesses
+            document.getElementById("guessAgain").onclick=()=>{
+                counter++;
+                document.getElementById("tries").innerHTML=`Total trials: ${counter}`;
+                let status=document.getElementById("stat").value;
+                //let l=arr.length;
+               
+               
+                if(status==1){
+                    //max=Math.max(...arr);
+                    //console.log("Max:"+max);
+                    let count=0;
+                    
+                    guessedH=Math.floor(Math.random()*(20-guessed)+guessed+1);
+                    document.getElementById("display").innerHTML=`I guessed the number higher than ${guessed}, which is ${guessedH}`;
+                    
+                    guessed=guessedH;
+                    arr.push[guessedH];
+                    
+                    //bot wins
+                    if(guessed==correct){
+                        document.getElementById("display").innerHTML=`Yay! ${guessed} is the correct one :D`;
+                    }
+                    console.log(arr);
+                }
+                else if(status==2){
+                    //min=Math.min(...arr);
+                    //console.log("Min: "+min);
+                    guessedL=Math.floor(Math.random()*(guessed-0)+0);
+                    console.log(arr);
+                    
+                 
+                    document.getElementById("display").innerHTML=`I guessed the number lower than ${guessed}, which is ${guessedL}`;
+                    arr.push(guessedL);
+                    guessed=guessedL;
+
+                    //bot wins
+                    if(guessed==correct){
+                    document.getElementById("display").innerHTML=`Yay! ${guessed} is the correct one :D`;
+                    }
+                    console.log(arr);
+                }
+                
+            }
+        }
+    }
+
+
+
+</script>
+</html>
