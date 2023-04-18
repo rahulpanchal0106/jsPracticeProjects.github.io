@@ -9,15 +9,13 @@
 </head>
 <body>
     <div id="user">
-        
         <div id="set">
-
             <input type="number" placeholder="Set the number" id="corr">
         </div>
         <div id="info">
             <h1 id="h1">U guess the number</h1>
             <div id="corrDisplay">Corr</div>
-            <div id="tries">Total tries: 0</div>
+            
             <div id="display"></div>
         </div>
     </div>
@@ -30,6 +28,7 @@
 
         </select>
         <button id="guessAgain">Guess again</button>
+        <div id="tries">Total tries: 0</div>
     </div>
    
 </body>
@@ -42,7 +41,8 @@
         document.getElementById("bot").style.display="flex";
         document.getElementById("corrDisplay").style.display="flex";
         document.getElementById("tries").style.display="flex";
-        document.getElementById("corrDisplay").innerHTML=`Correct number: ${correct}`;        
+        document.getElementById("corrDisplay").innerHTML=`Correct number: ${correct}`;      
+        
         //First guess
         document.getElementById("guess").onclick=()=>{
             document.getElementById("guess").style.display="none";
@@ -55,17 +55,26 @@
 
             arr.push(guessed);
             console.log(arr);
+            //bot wins
             if(guessed==correct){
                 document.getElementById("display").innerHTML=`Yay! ${guessed} is the correct one :D`;
                 document.getElementById("guess").style.display="none";
                 document.getElementById("guessAgain").style.display="none";
+                document.getElementById("tries").style.position="absolute";
+                document.getElementById("tries").style.width="100vw";
+                document.getElementById("tries").style.height="96.6vh";
+                dqocument.getElementById("tries").style.height = "100px";
+                
             }
+            else if(correct>20 || correct<0){
+                      document.getElementById("h1").innerHTML="You cannot set the number gteater than 20 and less than 0";
+                    }
             //Secondary guesses
             document.getElementById("guessAgain").onclick=()=>{
                 counter++;
                 document.getElementById("tries").innerHTML=`Total trials: ${counter}`;
                 let status=document.getElementById("stat").value;
-                //let l=arr.length;
+                //let l=arr.length; document.getElementById("stat").style.display = "none";
                
                
                 if(status==1){
@@ -82,6 +91,15 @@
                     //bot wins
                     if(guessed==correct){
                         document.getElementById("display").innerHTML=`Yay! ${guessed} is the correct one :D`;
+                         document.getElementById("guess").style.display="none";
+                       document.getElementById("guessAgain").style.display="none";
+                       document.getElementById("stat").style.display = "none";
+                       document.getElementById("tries").style.position="absolute";
+                document.getElementById("tries").style.width="100%";
+                document.getElementById("tries").style.height="96.6vh";
+                      document.getElementById("tries").style.height="100px";
+                    }else if(guessed>20 || guessed<0){
+                      document.getElementById("display").innerHTML="Guess the number between the range of 0 and 20";
                     }
                     console.log(arr);
                 }
@@ -99,6 +117,17 @@
                     //bot wins
                     if(guessed==correct){
                     document.getElementById("display").innerHTML=`Yay! ${guessed} is the correct one :D`;
+                     document.getElementById("guess").style.display = "none";
+                     document.getElementById("guessAgain").style.display = "none";
+                      document.getElementById("stat").style.display = "none";
+                     document.getElementById("tries").style.position = "absolute";
+                     document.getElementById("tries").style.width= "100%";
+                     document.getElementById("tries").style.height = "96.6vh";
+                      document.getElementById("tries").style.height="100px";
+                      
+                    }
+                    else if(guessed>20 || guessed<0){
+                      document.getElementById("display").innerHTML="Guess the number between the range of 0 and 20";
                     }
                     console.log(arr);
                 }

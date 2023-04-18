@@ -18,6 +18,7 @@
 
 <script>
 //without objects
+/*
 let count=0, i1=0, i2=0, i3=0, i4=0, i5=0;
 
   document.getElementById("i1").onclick=()=>{
@@ -43,8 +44,24 @@ let count=0, i1=0, i2=0, i3=0, i4=0, i5=0;
   function display(){
       count=i1+i2+i3+i4+i5;
       document.getElementById("display").innerHTML=`Total items = ${i1}i1 + ${i2}i2 + ${i3}i3 + ${i4}i4 + ${i5}i5 = ${count}`;
+  }*/
+//with objects
+let size=0,i1=0,i2=0,i3=0,i4=0,i5=0;
+
+const cart={
+  size: `${size}`,
+  i1: function(){
+      i1++;
+      console.log(i1);
+      return i1;
   }
-;
+  
+};
+document.getElementById("i1").onclick=()=>{
+  cart.i1();
+ 
+}
+
 </script>
 
 </html>

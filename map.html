@@ -7,33 +7,6 @@
     <title>map</title>
 </head>
 <style>
-<<<<<<< HEAD
-    body{
-        background-color:#111;
-    }
-    #store{
-        border: 1px red solid;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    #display{
-        color: white;
-        border: 1px white solid;
-        width: 50%;
-        padding: 20px;
-    }
-</style>
-
-<body>
-    <div id="store">
-        <div id="display">
-
-        </div>
-        
-=======
   body{
     color: white;
     background-color: black;
@@ -65,38 +38,10 @@
       </div>
       <button id="ok">Ok</button>
       <div id="total"></div>
->>>>>>> 6ae692a82107af231ad3eaa399b45a9a15d38a4b
     </div>
 </body>
 <script>
     const store = new Map([
-<<<<<<< HEAD
-    ["T-shirt",100],
-    ["Jeans",200],
-    ["Belt", 69],
-    ["BackPack",400],
-    ["Shoes",700],
-    ]);
-    function print(key, value){
-        console.log(`${value}: $${key}`);
-        document.getElementById("display").innerHTML+=`${value}: $${key}`;
-        var btn=document.createElement("button");
-        btn.innerHTML="buy";
-        document.getElementById("display").appendChild(btn);
-        btn.setAttribute("id","butts");
-        document.getElementById("display").innerHTML+="<br><br>";
-
-       
-    }
-    console.log(">>>Store items<<<");
-    store.forEach(print);
-    store.set("Underwere","400");
-    let cart=0;
-    cart+=store.get("Jeans");
-    cart+=store.get("Belt");
-    console.log(`total: $${cart}`);
-
-=======
       ["T-shirt",300],
       ["Jeans",500],
       ["Backpack",800],
@@ -126,6 +71,5 @@
       }
     }
       
->>>>>>> 6ae692a82107af231ad3eaa399b45a9a15d38a4b
 </script>
 </html>

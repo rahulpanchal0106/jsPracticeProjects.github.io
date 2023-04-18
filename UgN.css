@@ -9,11 +9,11 @@
 }
 body{
     background-image: url(bg/UgN.png);
-    background-position: 2% 13%;
+    background-position: 2% 3%;
     background-size: 100%;
     background-repeat: no-repeat;
     margin: 0px;
-    overflow: hidd;
+    overflow: hidden;
 }
 
 #display{
